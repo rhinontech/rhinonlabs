@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const HomePage = () => {
   return (
-    <div className="relative flex flex-col gap-[10vh]">
+    <div className="relative flex flex-col gap-[10vh] max-w-[1440px] mx-auto">
       <div className="absolute top-0 left-0">
         <svgImages.starBgImage />
       </div>
