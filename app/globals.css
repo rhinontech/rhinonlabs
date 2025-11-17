@@ -44,7 +44,7 @@
 }
 
 .dark {
-  --background: oklch(0.08 0 0);
+  --background: oklch(0.173 0 0);
   --foreground: oklch(0.98 0 0);
   --card: oklch(0.12 0 0);
   --card-foreground: oklch(0.98 0 0);
@@ -130,4 +130,17 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(calc(-50% - 0.25rem  )); }
+  
+}
+
+.animate-scroll {
+  animation: scroll 15s linear infinite;
+}
+.animate-scroll:hover {
+  animation-play-state: paused;
 }
