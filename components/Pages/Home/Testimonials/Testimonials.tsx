@@ -47,7 +47,8 @@ const Testimonials = () => {
             <div className="
                 absolute inset-0
                 px-40 py-20
-                
+                max-md:px-10
+                max-md:py-5
                 -z-10
             ">
                 <div className="[mask-image:linear-gradient(to_right,transparent,white_30%,white_60%,transparent)]
@@ -55,9 +56,9 @@ const Testimonials = () => {
                     <img src="https://framerusercontent.com/images/Bg0xEtEQPRSX3REmgymLtrsMUQM.jpg?scale-down-to=2048" className="w-full h-full object-cover" alt="" />
                 </div>
             </div>
-            <div className="flex flex-col gap-3 w-5xl">
+            <div className="flex flex-col gap-3">
                 <p className="text-center w-full">Testimonials</p>
-                <h2 className="text-center w-full text-7xl">See What Others Say</h2>
+                <h2 className="text-center w-full text-7xl max-md:text-5xl max-sm:text-3xl">See What Others Say</h2>
             </div>
             <div className="relative w-full mt-[340px] overflow-hidden ">
                 <ul className="flex w-fit gap-[0.5rem] animate-scroll">

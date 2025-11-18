@@ -11,7 +11,7 @@ import Footer from "./Footer/Footer";
 const HomePage = () => {
   return (
     <div className="relative flex flex-col ">
-      <div className="absolute top-0 left-0">
+      <div className="absolute inset-0 top-0 left-0">
         <svgImages.starBgImage />
       </div>
       <Hero />
@@ -21,7 +21,6 @@ const HomePage = () => {
       <Testimonials />
       <Pricing />
       <Faq />
-      <Footer />
     </div>
   );
 };

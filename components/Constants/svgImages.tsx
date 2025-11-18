@@ -1,11 +1,14 @@
 const starBgImage = () => {
   return (
     <svg
-      width="1440"
-      height="499"
       viewBox="0 0 1440 499"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid slice"
+      style={{
+        width: "100%",
+        height: "auto",
+        display: "block",
+      }}
     >
       <g opacity="0.72">
         <mask

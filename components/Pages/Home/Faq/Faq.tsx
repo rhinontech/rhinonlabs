@@ -42,7 +42,7 @@ export default function Faq() {
 
     return (
 
-        <div className="w-3xl mx-auto px-4 py-20">
+        <div className="max-w-3xl z-10 mx-auto px-4 py-20">
             {/* Header */}
             <motion.div
                 initial={{ opacity: 0, y: -20 }}

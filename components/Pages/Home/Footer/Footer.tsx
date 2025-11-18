@@ -35,7 +35,7 @@ const Footer = () => {
                 mask-mode:luminance">
             <div className="bg-[url('https://framerusercontent.com/images/OtnmdtGgpJnjSFqMANBQ2epErk.jpg?scale-down-to=2048')] bg-cover bg-center">
     
-                <div className="w-6xl flex flex-col gap-16 pt-40 mx-auto pb-16 px-5">
+                <div className=" max-w-6xl flex flex-col gap-16 pt-40 mx-auto pb-16 px-5">
 
                     {/* Header */}
                     <div className="flex flex-col gap-5">
@@ -109,7 +109,7 @@ const Footer = () => {
 
             </div>
             <div className="py-10 border-t-2">
-                <div className="w-6xl mx-auto">
+                <div className="max-w-6xl mx-auto">
                     <p className="text-white/80">© 2025 Wize. All rights reserved.</p>
                 </div>
             </div>

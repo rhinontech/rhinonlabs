@@ -32,7 +32,7 @@ export const HeroHeader = () => {
       >
         <div
           className={cn(
-            "mx-auto mt-2 max-w-6xl px-6 ",
+            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 ",
             isScrolled && "bg-background/50 max-w-4xl border lg:px-5"
           )}
         >
@@ -85,9 +85,12 @@ export const HeroHeader = () => {
             {/* Buttons + Mobile Menu */}
             <div
               className={cn(
-                "lg:flex hidden w-fit items-center justify-end gap-4 rounded-3xl border-transparent p-0 shadow-none",
+                // Base: hidden on mobile, flex on desktop
+                "hidden lg:flex w-fit items-center justify-end gap-4 rounded-3xl border-transparent p-0 shadow-none",
+
+                // Mobile state: only show when menu is open
                 menuState &&
-                  "absolute top-full left-0 w-full flex flex-col space-y-4 bg-background border p-6 rounded-2xl shadow-2xl lg:hidden"
+                "flex lg:hidden absolute top-full left-0 w-full flex-col space-y-4 bg-background border p-6 max-sm:p-2 rounded-2xl shadow-2xl"
               )}
             >
               {/* Mobile Links */}
