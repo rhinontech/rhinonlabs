@@ -1,18 +1,33 @@
+'use client'
 import svgImages from "@/components/Constants/svgImages";
 import Image from "next/image";
+import Process from "./Process/Process";
+import Feature from "./Feature/Feature";
+import Testimonials from "./Testimonials/Testimonials";
+import Pricing from "./Pricing/Pricing";
+import Faq from "./Faq/Faq";
+import Hero from "./Hero/Hero";
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   return (
-    <div className="relative flex flex-col gap-[10vh] max-w-[1440px] mx-auto">
-      <div className="absolute top-0 left-0">
+    <div className="relative flex flex-col ">
+      <motion.div
+        className="absolute inset-0 top-0 left-0"
+        initial={{ opacity: 0, }}
+        animate={{ opacity: 1, }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+        viewport={{ once: true }} // 👈 only animate on first view
+      >
         <svgImages.starBgImage />
-      </div>
-      <div>
-        hey
-      </div>
-      <div>
-        hero
-      </div>
+      </motion.div>
+      <Hero />
+
+      <Process />
+      <Feature />
+      <Testimonials />
+      <Pricing />
+      <Faq />
     </div>
   );
 };
