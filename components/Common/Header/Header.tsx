@@ -8,8 +8,8 @@ import Image from "next/image";
 
 const menuItems = [
   { name: "Home", href: "/" },
-  { name: "Features", href: "/feature" },
-  { name: "Pricing", href: "/pricing" },
+  { name: "Portfolio", href: "/projects" },
+  { name: "About", href: "/about" },
 ];
 
 export const HeroHeader = () => {
@@ -28,7 +28,7 @@ export const HeroHeader = () => {
     <header>
       <nav
         data-state={menuState && "active"}
-        className="fixed z-20 w-full px-2 group"
+        className="md:fixed z-20 w-full px-2 group"
       >
         <div
           className={cn(
@@ -36,7 +36,7 @@ export const HeroHeader = () => {
             isScrolled && "bg-background/50 max-w-4xl border lg:px-5"
           )}
         >
-          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+          <div className="relative flex flex-wrap items-center justify-between md:gap-6 gap-3 py-3 lg:gap-0 lg:py-4">
             {/* Logo + Mobile Menu Button */}
             <div className="flex w-full justify-between lg:w-auto">
               <Link
@@ -90,7 +90,7 @@ export const HeroHeader = () => {
 
                 // Mobile state: only show when menu is open
                 menuState &&
-                "flex lg:hidden absolute top-full left-0 w-full flex-col space-y-4 bg-background border p-6 max-sm:p-2 rounded-2xl shadow-2xl"
+                "flex lg:hidden absolute z-10 top-full left-0 w-full flex-col space-y-4 bg-background border p-6 max-sm:p-2 rounded-2xl shadow-2xl"
               )}
             >
               {/* Mobile Links */}

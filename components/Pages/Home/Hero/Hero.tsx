@@ -1,35 +1,60 @@
+'use client'
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 
 import Photos from './PhotosCrauser'
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { motion } from 'framer-motion'
 
 const Hero = () => {
     return (
         <div className="overflow-hidden" >
-            <div className="
-                absolute inset-0
-                top-64
-                -z-10
-            ">
+            <motion.div
+                className="absolute inset-0 top-64 max-sm:top-96 -z-10"
+                initial={{ opacity: 0, }}
+                animate={{ opacity: 1, }}
+                transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
+                viewport={{ once: true }} // 👈 only animate on first view
+
+            >
                 <div className="[mask-image:linear-gradient(to_bottom,transparent,white_30%,white_60%,transparent)]
                 mask-mode:luminance">
                     <img src="https://framerusercontent.com/images/oEeFUDDyOcLHiBBci1NNXPxqE.jpg?scale-down-to=2048" className="w-full h-full object-cover" alt="" />
                 </div>
-            </div>
-            <div className=" pt-44 px-5 pb-10 flex flex-col gap-10 max-w-4xl mx-auto" >
+            </motion.div>
+            <div className=" pt-44 max-sm:pt-20 px-5 pb-10 flex flex-col gap-10 max-w-4xl mx-auto" >
                 <div className="flex flex-col gap-5 items-center">
-                    <p className="text-center">Your Design Agency Template</p>
+                    <motion.p
+                        className="text-center"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true }} // 👈 only animate on first view
+                    >
+                        Your Design Agency Template
+                    </motion.p>
 
                     <div className="flex flex-col gap-0">
-                        <TextGenerateEffect words={"No-Contract"} />
-                        <TextGenerateEffect words={"Design Subscription"} />
+                        <TextGenerateEffect className="text-center lg:text-7xl md:text-5xl text-4xl" words={"No-Contract <br /> Design Subscription"} />
+                        
                     </div>
-                    <p className="text-center max-w-2xl text-lg text-white/80">Altair delivers top-tier design services through a simple subscription model. No contracts, no hidden fees – just consistent, high-quality design.</p>
+                    <motion.p
+                        className="text-center max-w-2xl text-lg text-white/80"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true }} // 👈 only animate on first view
+                    >Altair delivers top-tier design services through a simple subscription model. No contracts, no hidden fees – just consistent, high-quality design.</motion.p>
                 </div>
-                <div className="flex justify-center gap-10">
+                <motion.div
+                    className="flex items-center justify-center max-md:flex-col gap-5 md:gap-10"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true }} // 👈 only animate on first view
+                >
                     <div className="">
-                        <Button className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-base font-semibold rounded-none border-3 border-black/30">
+                        <Button className="bg-white text-black hover:bg-gray-200 px-4 py-4 md:px-6 md:py-6 text-base font-semibold rounded-none border-3 border-black/30">
                             Get Started
                         </Button>
                     </div>
@@ -59,15 +84,30 @@ const Hero = () => {
                             <span className="text-white/70 text-sm">Trusted by 36+ businesses</span>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
-            <div className="  flex justify-between px-5 gap-10 max-w-4xl mx-auto" >
+            <motion.div
+                className="  flex justify-between px-5 gap-10 max-w-4xl mx-auto"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                viewport={{ once: true }} // 👈 only animate on first view
+            >
                 <span>Latest Project</span>
                 <span>2024 - 2025</span>
 
-            </div>
+            </motion.div>
 
-            <Photos />
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                viewport={{ once: true }} // 👈 only animate on first view
+                className="pb-3"
+
+            >
+                <Photos />
+            </motion.div>
         </div>
     );
 }

@@ -131,7 +131,7 @@ export default function CarouselSlideshow() {
                 pointerEvents: position === "center" ? "auto" : "none",
               }}
             >
-              <div className="relative w-[300px] border border-white/20 sm:w-[90%]  lg:w-full h-[650px] p-[25px] shadow-2xl"
+              <div className="relative w-[300px] border border-white/20 sm:w-[90%]  lg:w-full h-[650px] max-sm:h-[400px] p-[25px] shadow-2xl"
                 >
 
                 {/* Gradient overlay for left card (left to right) */}

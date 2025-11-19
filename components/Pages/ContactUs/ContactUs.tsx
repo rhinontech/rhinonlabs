@@ -1,34 +1,60 @@
+'use client'
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { Textarea } from "@/components/ui/textarea";
 import Faq from "../Home/Faq/Faq";
+import { motion } from 'framer-motion'
 
 
 const ContactUs = () => {
     return (
         <div className="relative flex flex-col ">
-            <div className="absolute inset-0 top-0 left-0 -z-10">
+            <motion.div
+                className="absolute inset-0 top-0 left-0 -z-10"
+                initial={{ opacity: 0, }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true }} // 👈 only animate on first view
+            >
                 <div className="[mask-image:linear-gradient(to_bottom,transparent,white_30%,white_60%,transparent)]
                         mask-mode:luminance">
                     <img src="https://framerusercontent.com/images/VeiBx4I8kxeohO3NysSUJ3HNiN8.jpg?scale-down-to=2048" className="w-full h-full object-cover" alt="" />
                 </div>
-            </div>
+            </motion.div>
             <div>
-                <div className=" pt-44 px-5 pb-10 flex flex-col items-center gap-10 max-w-[1400] mx-auto" >
+                <div className=" pt-44 max-md:pt-20 px-5 pb-10 flex flex-col items-center gap-10 max-w-[1400] mx-auto" >
                     <div className="flex flex-col gap-5 items-center">
-                        <p className="text-center">CONTACT</p>
+                        <motion.p
+                            className="text-center"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true }} // 👈 only animate on first view
+                        >CONTACT</motion.p>
 
                         <div className="flex flex-col gap-0">
-                            <TextGenerateEffect words={"Let’s Talk More"} />
+                            <TextGenerateEffect className="lg:text-7xl md:text-5xl text-4xl" words={"Let’s Talk More"} />
 
                         </div>
-                        <p className="text-center max-w-2xl text-lg text-white/80">Book your free consultation to discuss your project.</p>
+                        <motion.p
+                            className="text-center max-w-2xl text-lg text-white/80"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true }} // 👈 only animate on first view
+                        >Book your free consultation to discuss your project.</motion.p>
                     </div>
-                    <div className="w-[700px] p-5 bg-white/1 backdrop-blur-md border border-white/10 shadow-xl">
+                    <motion.div
+                        className="w-[700px] max-md:w-full p-5 bg-white/1 backdrop-blur-md border border-white/10 shadow-xl"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        viewport={{ once: true }} // 👈 only animate on first view
+                    >
                         <form className="flex flex-col gap-5 text-lg">
-                            <div className="grid grid-cols-2 gap-3">
+                            <div className="grid grid-cols-2 max-md:grid-cols-1 gap-3">
                                 <div className="flex flex-col gap-3">
                                     <Label>NAME</Label>
                                     <Input
@@ -66,7 +92,7 @@ const ContactUs = () => {
                                 Submit
                             </Button>
                         </form>
-                    </div>
+                    </motion.div>
                 </div>
                 <Faq />
 

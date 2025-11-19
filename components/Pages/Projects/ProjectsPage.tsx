@@ -1,4 +1,6 @@
+'use client'
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { motion } from 'framer-motion';
 
 
 
@@ -27,27 +29,64 @@ const slides = [
 
 const ProjectsPage = () => {
     return (
-        <div className="relative flex flex-col ">
-            <div className="absolute inset-0 top-0 left-0 -z-10">
+        <div className="relative flex flex-col overflow-hidden ">
+            <motion.div
+                className="absolute inset-0 top-0 left-0 -z-10"
+                initial={{ opacity: 0, }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true }} // 👈 only animate on first view
+            >
                 <div className="[mask-image:linear-gradient(to_bottom,transparent,white_30%,white_60%,transparent)]
                 mask-mode:luminance">
                     <img src="https://framerusercontent.com/images/VeiBx4I8kxeohO3NysSUJ3HNiN8.jpg?scale-down-to=2048" className="w-full h-full object-cover" alt="" />
                 </div>
-            </div>
+            </motion.div>
             <div>
-                <div className=" pt-44 px-5 pb-10 flex flex-col gap-10 max-w-[1400] mx-auto" >
+                <div className=" pt-44 max-md:pt-20 px-5 pb-10 flex flex-col gap-10 max-w-[1400] mx-auto" >
                     <div className="flex flex-col gap-5 items-center">
-                        <p className="text-center">PORTFOLIO</p>
+                        <motion.p
+                            className="text-center"
+                            initial={{ opacity: 0, y: 20, }}
+                            animate={{ opacity: 1, y: 0, }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true }} // 👈 only animate on first view
+                        >PORTFOLIO</motion.p>
 
                         <div className="flex flex-col gap-0">
-                            <TextGenerateEffect words={"Selected Works"} />
+                            <TextGenerateEffect className="lg:text-7xl md:text-5xl text-4xl " words={"Selected Works"} />
 
                         </div>
-                        <p className="text-center max-w-2xl text-lg text-white/80">Altair delivers top-tier design services through a simple subscription model. No contracts, no hidden fees – just consistent, high-quality design.</p>
+                        <motion.p
+                            className="text-center max-w-2xl text-lg text-white/80"
+                            initial={{ opacity: 0, y: 20, }}
+                            animate={{ opacity: 1, y: 0, }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            viewport={{ once: true }} // 👈 only animate on first view
+                        >Altair delivers top-tier design services through a simple subscription model. No contracts, no hidden fees – just consistent, high-quality design.</motion.p>
                     </div>
-                    <div className="grid grid-cols-2 max-md:grid-cols-1 gap-5">
+                    <motion.div
+                        className="grid grid-cols-2 max-md:grid-cols-1 gap-5"
+                        initial={{
+                            opacity: 0,
+                            y: 20,
+                            rotateX: 10,      // like lifting from the back
+                            transformPerspective: 1000,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            y: 0,
+                            rotateX: 0,       // now upright facing viewer
+                        }}
+                        transition={{
+                            duration: 0.8,
+                            ease: "easeOut",
+                            delay:0.5
+                        }}
+                        viewport={{ once: true }}
+                    >
                         {slides.map((slide) => (
-                            <div key={slide.id} className="group border border-white/30 relative w-full h-[450px] overflow-hidden cursor-pointer">
+                            <div key={slide.id} className="group border border-white/30 relative w-full h-[450px] max-md:h-[300px] overflow-hidden cursor-pointer">
                                 {/* IMAGE */}
                                 <img
                                     src={slide.image}
@@ -69,9 +108,9 @@ const ProjectsPage = () => {
                                 </div>
                             </div>
                         ))}
-                        
 
-                    </div>
+
+                    </motion.div>
 
                 </div>
 

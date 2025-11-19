@@ -42,16 +42,13 @@ export default function Faq() {
 
     return (
 
-        <div className="max-w-3xl z-10 mx-auto px-4 py-20">
+        <div className="lg:w-3xl max-w-2xl z-10 mx-auto px-4 py-20">
             {/* Header */}
             <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
                 className="text-center mb-16 flex flex-col items-center gap-5"
             >
                 <p>FAQ</p>
-                <h1 className="text-7xl md:text-6xl">
+                <h1 className="lg:text-7xl  md:text-5xl sm:text-5xl text-3xl">
                     Frequently <br /> Asked Questions
                 </h1>
                 <p className="text-md max-w-xl text-white/80">
@@ -66,7 +63,7 @@ export default function Faq() {
                     <motion.div
                         key={item.id}
                         initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
                         <motion.div

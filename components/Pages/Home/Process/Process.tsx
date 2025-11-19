@@ -27,11 +27,11 @@ export default function Process() {
     const bg2 = useTransform(useScroll({ target: ref2, offset: ["start center", "end center"] }).scrollYProgress, [0, 1], ["#0f172a", "#ffffff"]);
 
     return (
-        <div className="px-10 py-20 flex max-w-5xl mx-auto flex-col">
+        <div className="px-10 max-sm:px-3 py-20 flex max-w-5xl mx-auto flex-col">
             {/* header */}
             <div className="flex flex-col space-y-5">
                 <p>Process</p>
-                <h2 className="text-7xl ">Get Started In <br />
+                <h2 className="lg:text-7xl md:text-5xl sm:text-4xl text-4xl">Get Started In <br />
                     Three Simple Steps...</h2>
                 <p>Design as you know it is out the door. Design as you want it just arrived.</p>
             </div>

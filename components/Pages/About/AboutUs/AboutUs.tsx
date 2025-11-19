@@ -1,5 +1,7 @@
+'use client'
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
+import { motion } from 'framer-motion'
 
 const AboutUs = () => {
     return (
@@ -14,9 +16,9 @@ const AboutUs = () => {
                     </div>
                     <p className="text-center max-w-2xl text-lg text-white/80">Altair delivers top-tier design services through a simple subscription model. No contracts, no hidden fees – just consistent, high-quality design.</p>
                 </div>
-                <div className="flex justify-center gap-10">
+                <div className="flex items-center max-md:gap-5 max-md:flex-col justify-center gap-10">
                     <div className="">
-                        <Button className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-base font-semibold rounded-none border-3 border-black/30">
+                        <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6 text-base font-semibold rounded-none border-3 border-black/30">
                             Get Started
                         </Button>
                     </div>
@@ -48,12 +50,14 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-            <div className=" relative flex h-[85vh] w-[80vw]  items-center justify-center">
-                <div className="
-                absolute inset-0
-
-                -z-10
-            ">
+            <motion.div
+                className=" relative flex h-[85vh] w-[80vw] max-md:h-[60vh]  items-center justify-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut", }}
+                viewport={{ once: true, amount:0.4 }} // 👈 only animate on first view
+            >
+                <div className="absolute inset-0 -z-10">
 
                     <img src="https://i.pinimg.com/1200x/a3/51/30/a35130edc8113b0b747ed58f84fa3f8c.jpg" className="w-full h-full opacity-50 object-cover" alt="" />
 
@@ -61,7 +65,7 @@ const AboutUs = () => {
 
                 <h2 className="font-bold text-xl">Rhinon</h2>
 
-            </div>
+            </motion.div>
 
 
         </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { Star } from "lucide-react";
+import { motion } from "framer-motion";
 
 
 export type Testimonial = {
@@ -44,23 +45,24 @@ export const testimonials: Testimonial[] = [
 const Testimonials = () => {
     return (
         <div className="py-20 relative flex flex-col items-center justify-center">
-            <div className="
-                absolute inset-0
-                px-40 py-20
-                max-md:px-10
-                max-md:py-5
-                -z-10
-            ">
+            <motion.div
+                className="absolute inset-0 px-40 py-20 max-md:px-0 max-md:py-0 max-md:top-44 -z-10"
+                initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1,}}
+                transition={{ duration: 1, ease: "easeOut" }}
+                viewport={{ once: true, amount: 0.5 }} // 👈 only animate on first view
+
+            >
                 <div className="[mask-image:linear-gradient(to_right,transparent,white_30%,white_60%,transparent)]
                 mask-mode:luminance">
                     <img src="https://framerusercontent.com/images/Bg0xEtEQPRSX3REmgymLtrsMUQM.jpg?scale-down-to=2048" className="w-full h-full object-cover" alt="" />
                 </div>
-            </div>
+            </motion.div>
             <div className="flex flex-col gap-3">
                 <p className="text-center w-full">Testimonials</p>
                 <h2 className="text-center w-full text-7xl max-md:text-5xl max-sm:text-3xl">See What Others Say</h2>
             </div>
-            <div className="relative w-full mt-[340px] overflow-hidden ">
+            <div className="relative w-full mt-[340px] max-md:mt-[200px] overflow-hidden ">
                 <ul className="flex w-fit gap-[0.5rem] animate-scroll">
                     {[...testimonials, ...testimonials].map((test, index) => (
                         <div key={index} className="border-2 p-0.5 w-[350px] h-[300px]">

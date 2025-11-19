@@ -231,7 +231,7 @@ export default function Pricing() {
           </div>
         </div>
       </div>
-      <div className="flex lg:hidden px-10 py-10 gap-10 w-full">
+      <div className="flex lg:hidden px-3 py-10 gap-10 w-full">
         {/* Yellow sticky box */}
         <motion.div
           className="h-fit w-full flex flex-col gap-5  font-semibold"

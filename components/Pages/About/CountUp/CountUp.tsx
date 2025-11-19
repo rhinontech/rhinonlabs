@@ -1,27 +1,32 @@
 "use client";
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect } from "react";
+import { motion, useMotionValue, useTransform, animate, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export function CountUp({
   target = 100,
   duration = 1,
   className = "",
 }) {
-  const count = useMotionValue(1);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // 👈 runs once only
 
-  // Round motion value for display
+  const count = useMotionValue(0);
+
+  // Round for display
   const rounded = useTransform(count, (latest) => Math.floor(latest));
 
   useEffect(() => {
+    if (!isInView) return; // wait until visible
+
     animate(count, target, {
-      duration: duration,
+      duration,
       ease: "easeOut",
     });
-  }, [target]);
+  }, [isInView]);
 
   return (
-    <motion.span className={className}>
+    <motion.span ref={ref} className={className}>
       {rounded}
     </motion.span>
   );

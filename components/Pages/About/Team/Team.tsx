@@ -1,6 +1,7 @@
+'use client'
 import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
-import { CountUp } from "../CountUp/CountUp";
+import { motion } from "framer-motion";
 
 const teams = [
     {
@@ -30,7 +31,14 @@ const Team = () => {
             <div className="flex flex-col w-full gap-5">
                 <div className="grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 w-full gap-3">
                     {teams.map((team, index) => (
-                        <div key={index} className=" group cursor-pointer relative flex items-end justify-center h-[450px] p-5">
+                        <motion.div
+                            key={index}
+                            className=" group cursor-pointer relative flex items-end justify-center h-[450px] p-5"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 * index }}
+                            viewport={{ once: true, amount: 0.5 }} // 👈 only animate on first view
+                        >
                             <div className="absolute inset-0 -z-10 [mask-image:linear-gradient(to_bottom,rgba(180,180,180,1),rgba(180,180,180,1)_70%,transparent)]">
                                 <img src={team.image} className="w-full h-full group-hover:opacity-50 opacity-80 transition-all duration-300 object-cover" alt="" />
                             </div>
@@ -46,29 +54,35 @@ const Team = () => {
 
                             </div>
 
-                        </div>
+                        </motion.div>
                     ))}
 
 
 
                 </div>
-                <div className="flex flex-col border gap-20 p-10 bg-[url('https://framerusercontent.com/images/q1aFGNfaXt7u0fNbIGobxcvPI.png?scale-down-to=2048')] bg-cover bg-center ">
+                <motion.div
+                    className="flex flex-col border gap-20 max-md:gap-10 p-10 bg-[url('https://framerusercontent.com/images/q1aFGNfaXt7u0fNbIGobxcvPI.png?scale-down-to=2048')] bg-cover bg-center "
+                    initial={{ opacity: 0}}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6, ease: "easeOut", }}
+                    viewport={{ once: true, amount:0.5 }} // 👈 only animate on first view
+                >
                     <h2 className="w-full text-2xl">Ready for a new chapter?</h2>
-                    <div className="flex">
+                    <div className="flex max-md:flex-col gap-5">
                         <p className="text-white/70 max-w-sm">
                             If you’d like to work on projects that matter, check out our open positions and apply.
                         </p>
-                        <div className="flex-1 flex justify-end items-end">
+                        <div className="flex-1 flex md:justify-end md:items-end">
                             <Button className="bg-white text-black hover:bg-gray-200  py-5 text-base font-semibold rounded-none border-3 border-black/30">
                                 View open positions
                             </Button>
                         </div>
                     </div>
 
-                </div>
+                </motion.div>
 
             </div>
-            
+
 
         </div>
     )

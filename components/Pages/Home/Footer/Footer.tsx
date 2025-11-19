@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { div } from "framer-motion/client";
 import type { LucideIcon } from "lucide-react";
 import { Facebook, Linkedin, Star, Twitter } from "lucide-react";
@@ -40,11 +41,11 @@ const Footer = () => {
                     {/* Header */}
                     <div className="flex flex-col gap-5">
                         <p>Get started</p>
-                        <h2 className="text-7xl">Still Not Sure <br />
-                            If It’s Right For You?</h2>
-                        <div className="flex mt-5 gap-10">
+                       
+                            <TextGenerateEffect className="lg:text-7xl md:text-6xl text-4xl" words={"Still Not Sure <br /> If It’s Right For You?"} />
+                        <div className="flex  mt-5 max-md:flex-col  gap-5 md:gap-10">
                             <div className="">
-                                <Button className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-base font-semibold rounded-none border-3 border-black/30">
+                                <Button className="bg-white text-black hover:bg-gray-200 md:px-6 md:py-6 px-4 py-4 text-base font-semibold rounded-none border-3 border-black/30">
                                     Get Started
                                 </Button>
                             </div>
@@ -93,7 +94,7 @@ const Footer = () => {
                         <p className="text-white/80">No-contract design subscription.</p>
                         <div className="flex gap-5">
                             {socialLinks.map((sl, index) => (
-                                <div className="h-10 w-10 border-2 hover:bg-amber-600 transition-color duration-300 rounded-full flex items-center justify-center">
+                                <div key={index} className="h-10 w-10 border-2 hover:bg-amber-600 transition-color duration-300 rounded-full flex items-center justify-center">
                                     <sl.icon fill="white" className="h-4 w-4" />
                                 </div>
                             ))}

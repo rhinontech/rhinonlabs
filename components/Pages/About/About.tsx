@@ -1,21 +1,26 @@
-import { Button } from "@/components/ui/button";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { Star } from "lucide-react";
+"use client"
 import Hero from "./Hero/Hero";
 import AboutUs from "./AboutUs/AboutUs";
 import Team from "./Team/Team";
 import Statics from "./Statics/Statics";
+import { motion } from 'framer-motion';
 
 
 const About = () => {
     return (
         <div className="relative flex flex-col ">
-            <div className="absolute inset-0 top-0 left-0 -z-10">
+            <motion.div
+                className="absolute inset-0 top-0 left-0 -z-10"
+                initial={{ opacity: 0, }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true }} // 👈 only animate on first view
+            >
                 <div className="[mask-image:linear-gradient(to_bottom,transparent,white_30%,white_60%,transparent)]
                         mask-mode:luminance">
                     <img src="https://framerusercontent.com/images/VeiBx4I8kxeohO3NysSUJ3HNiN8.jpg?scale-down-to=2048" className="w-full h-full object-cover" alt="" />
                 </div>
-            </div>
+            </motion.div>
             <div className="">
                 <Hero />
                 <AboutUs />
