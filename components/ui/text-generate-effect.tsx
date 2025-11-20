@@ -71,7 +71,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("", className)}>
       <div ref={ref}>
-        <motion.div className="dark:text-white leading-snug tracking-wide">
+        <motion.div className="dark:text-white">
           {renderWords()}
         </motion.div>
       </div>

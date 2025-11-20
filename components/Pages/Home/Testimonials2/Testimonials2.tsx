@@ -4,14 +4,14 @@ import { div } from "framer-motion/client";
 
 
 const services = [
-    "Figma design",
-    "Framer development",
-    "Landing Pages",
-    "Figma design",
-    "Framer development",
-    "Landing Pages",
-    "Figma design",
-    "Framer development",
+    "Dashboard UI/UX",
+    "Admin Panels & Internal Tools",
+    "SaaS Product Design",
+    "Enterprise Web Applications",
+    "Workflow Automation Interfaces",
+    "Analytics & Reporting Dashboards",
+    "Custom Design Systems",
+    "React / Next / Angular",
 ]
 
 const card = [
@@ -36,7 +36,7 @@ const Testimonials2 = () => {
                     <p className="text-center w-full">Testimonials</p>
                     <h2 className="text-center w-full text-7xl max-md:text-5xl max-sm:text-3xl">What We Work On</h2>
                 </div>
-                <div className="flex flex-wrap justify-center gap-2 max-w-2xl">
+                <div className="flex flex-wrap justify-center gap-2 max-w-3xl">
                     {services.map((services) => (
                         <span className="border border-white/10 text-sm  uppercase py-1 px-3 rounded-2xl ">
                             {services}

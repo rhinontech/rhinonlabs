@@ -12,7 +12,7 @@ import Testimonials2 from "./Testimonials2/Testimonials2";
 
 const HomePage = () => {
   return (
-    <div className="relative flex flex-col ">
+    <div className="relative flex flex-col gap-10">
       <motion.div
         className="absolute inset-0 top-0 left-0"
         initial={{ opacity: 0, }}

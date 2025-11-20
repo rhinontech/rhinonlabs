@@ -5,14 +5,14 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Check, Star, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const features = [
-  { name: 'One request at a time', included: true },
-  { name: 'Unlimited revisions', included: true },
-  { name: 'Fast 2-3 day turnaround', included: true },
-  { name: 'Pause or cancel anytime', included: true },
-  { name: 'Slack & email communication', included: true },
-  { name: 'Ideal for landing pages, graphics, decks & more', included: true },
-  { name: 'Framer development', included: false },
-]
+  { name: "One request at a time", included: true },
+  { name: "Unlimited revisions", included: true },
+  { name: "Fast 2-3 day turnaround", included: true },
+  { name: "Pause or cancel anytime", included: true },
+  { name: "Slack & email communication", included: true },
+  { name: "Ideal for landing pages, graphics, decks & more", included: true },
+  { name: "Framer development", included: false },
+];
 
 export default function Pricing() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -37,7 +37,6 @@ export default function Pricing() {
           style={{
             position: "sticky",
             top: "150px",
-
           }}
           className="h-fit flex items-center justify-center font-semibold"
         >
@@ -45,7 +44,9 @@ export default function Pricing() {
             <div className="">
               {/* Label */}
               <div className="mb-6">
-                <span className="text-sm font-semibold tracking-widest text-white/80">PRICING</span>
+                <span className="text-sm font-semibold tracking-widest text-white/80">
+                  Let’s Build Something Powerful
+                </span>
               </div>
 
               {/* Heading */}
@@ -55,7 +56,10 @@ export default function Pricing() {
 
               {/* Description */}
               <p className="text-lg text-white/80 mb-12 font-normal max-w-lg">
-                Choose the plan that fits your pace — whether you need consistent creative output or just a few design requests here and there.
+                Every project is unique — from small internal tools to large
+                multi-role enterprise systems. Instead of fixed subscription
+                plans, we provide custom proposals based on your scope,
+                timeline, and complexity.
               </p>
 
               {/* CTA Button */}
@@ -65,19 +69,30 @@ export default function Pricing() {
                 </Button>
               </div>
 
-
               {/* Social Proof */}
               <div className="flex items-center gap-4">
                 {/* Avatar Stack */}
                 <div className="flex -space-x-4">
                   <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
-                    <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User 1" className="w-full h-full rounded-full object-cover" />
+                    <img
+                      src="https://randomuser.me/api/portraits/women/1.jpg"
+                      alt="User 1"
+                      className="w-full h-full rounded-full object-cover"
+                    />
                   </div>
                   <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
-                    <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User 2" className="w-full h-full rounded-full object-cover" />
+                    <img
+                      src="https://randomuser.me/api/portraits/men/2.jpg"
+                      alt="User 2"
+                      className="w-full h-full rounded-full object-cover"
+                    />
                   </div>
                   <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
-                    <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User 3" className="w-full h-full rounded-full object-cover" />
+                    <img
+                      src="https://randomuser.me/api/portraits/women/3.jpg"
+                      alt="User 3"
+                      className="w-full h-full rounded-full object-cover"
+                    />
                   </div>
                 </div>
 
@@ -88,7 +103,9 @@ export default function Pricing() {
                       <Star key={i} className="w-3 h-3 fill-white text-white" />
                     ))}
                   </div>
-                  <span className="text-white/70 text-sm">Trusted by 36+ businesses</span>
+                  <span className="text-white/70 text-sm">
+                    Trusted by 36+ businesses
+                  </span>
                 </div>
               </div>
             </div>
@@ -104,7 +121,9 @@ export default function Pricing() {
               <h2 className="text-3xl font-semibold ">Design</h2>
               <div className="flex items-center gap-2 bg-green-900 bg-opacity-20 px-3 py-1 rounded-full">
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                <span className="text-sm font-medium text-green-400">Available</span>
+                <span className="text-sm font-medium text-green-400">
+                  Available
+                </span>
               </div>
             </div>
 
@@ -117,7 +136,9 @@ export default function Pricing() {
             <div className="mb-5">
               <div className="flex items-center gap-2 ">
                 <div>
-                  <span className="text-3xl font-semibold text-white">$2,490</span>
+                  <span className="text-3xl font-semibold text-white">
+                    $2,490
+                  </span>
                 </div>
                 <div className="flex items-center w-full h-full">
                   <span className="text-gray-400 text-sm">/ month</span>
@@ -136,8 +157,11 @@ export default function Pricing() {
                     key={index}
                     className={`flex items-center gap-3 text-gray-200' : 'text-gray-600'`}
                   >
-                    <div className={`rounded-full p-[1px] ${feature.included ? 'bg-white' : 'bg-white/70'
-                      } `}>
+                    <div
+                      className={`rounded-full p-[1px] ${
+                        feature.included ? "bg-white" : "bg-white/70"
+                      } `}
+                    >
                       {feature.included ? (
                         <Check className="w-3 h-3 text-black flex-shrink-0" />
                       ) : (
@@ -157,7 +181,7 @@ export default function Pricing() {
 
             {/* Footer */}
             <p className="text-center text-gray-400">
-              Got questions?{' '}
+              Got questions?{" "}
               <a href="#" className="text-white underline hover:no-underline">
                 Book a call
               </a>
@@ -168,10 +192,14 @@ export default function Pricing() {
           <div className="w-full bg-white border-2 p-8">
             {/* Header with Badge */}
             <div className="flex items-start justify-between mb-2">
-              <h2 className="text-3xl text-black font-semibold ">Design + Dev</h2>
+              <h2 className="text-3xl text-black font-semibold ">
+                Design + Dev
+              </h2>
               <div className="flex items-center gap-2 bg-green-900 bg-opacity-20 px-3 py-1 rounded-full">
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                <span className="text-sm font-medium text-green-400">Available</span>
+                <span className="text-sm font-medium text-green-400">
+                  Available
+                </span>
               </div>
             </div>
 
@@ -184,7 +212,9 @@ export default function Pricing() {
             <div className="mb-5">
               <div className="flex items-center gap-2 ">
                 <div>
-                  <span className="text-3xl font-semibold text-black">$2,490</span>
+                  <span className="text-3xl font-semibold text-black">
+                    $2,490
+                  </span>
                 </div>
                 <div className="flex items-center w-full h-full">
                   <span className="text-black/50 text-sm">/ month</span>
@@ -199,18 +229,13 @@ export default function Pricing() {
               </h3>
               <ul className="space-y-3">
                 {features.map((feature, index) => (
-                  <li
-                    key={index}
-                    className={`flex items-center gap-3 `}
-                  >
+                  <li key={index} className={`flex items-center gap-3 `}>
                     <div className={`rounded-full p-[1px] bg-black`}>
-
                       <Check className="w-3 h-3 text-white flex-shrink-0" />
-
-
-
                     </div>
-                    <span className="text-sm text-black/70">{feature.name}</span>
+                    <span className="text-sm text-black/70">
+                      {feature.name}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -223,7 +248,7 @@ export default function Pricing() {
 
             {/* Footer */}
             <p className="text-center text-black/50">
-              Got questions?{' '}
+              Got questions?{" "}
               <a href="#" className="text-black underline hover:no-underline">
                 Book a call
               </a>
@@ -233,14 +258,14 @@ export default function Pricing() {
       </div>
       <div className="flex lg:hidden px-3 py-10 gap-10 w-full">
         {/* Yellow sticky box */}
-        <motion.div
-          className="h-fit w-full flex flex-col gap-5  font-semibold"
-        >
+        <motion.div className="h-fit w-full flex flex-col gap-5  font-semibold">
           <section className="">
             <div className="">
               {/* Label */}
               <div className="mb-6">
-                <span className="text-sm font-semibold tracking-widest text-white/80">PRICING</span>
+                <span className="text-sm font-semibold tracking-widest text-white/80">
+                  PRICING
+                </span>
               </div>
 
               {/* Heading */}
@@ -250,7 +275,9 @@ export default function Pricing() {
 
               {/* Description */}
               <p className="text-lg text-white/80 mb-12 font-normal max-w-lg">
-                Choose the plan that fits your pace — whether you need consistent creative output or just a few design requests here and there.
+                Choose the plan that fits your pace — whether you need
+                consistent creative output or just a few design requests here
+                and there.
               </p>
 
               {/* CTA Button */}
@@ -260,19 +287,30 @@ export default function Pricing() {
                 </Button>
               </div>
 
-
               {/* Social Proof */}
               <div className="flex items-center gap-4">
                 {/* Avatar Stack */}
                 <div className="flex -space-x-4">
                   <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
-                    <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User 1" className="w-full h-full rounded-full object-cover" />
+                    <img
+                      src="https://randomuser.me/api/portraits/women/1.jpg"
+                      alt="User 1"
+                      className="w-full h-full rounded-full object-cover"
+                    />
                   </div>
                   <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
-                    <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User 2" className="w-full h-full rounded-full object-cover" />
+                    <img
+                      src="https://randomuser.me/api/portraits/men/2.jpg"
+                      alt="User 2"
+                      className="w-full h-full rounded-full object-cover"
+                    />
                   </div>
                   <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
-                    <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User 3" className="w-full h-full rounded-full object-cover" />
+                    <img
+                      src="https://randomuser.me/api/portraits/women/3.jpg"
+                      alt="User 3"
+                      className="w-full h-full rounded-full object-cover"
+                    />
                   </div>
                 </div>
 
@@ -283,7 +321,9 @@ export default function Pricing() {
                       <Star key={i} className="w-3 h-3 fill-white text-white" />
                     ))}
                   </div>
-                  <span className="text-white/70 text-sm">Trusted by 36+ businesses</span>
+                  <span className="text-white/70 text-sm">
+                    Trusted by 36+ businesses
+                  </span>
                 </div>
               </div>
             </div>
@@ -295,7 +335,9 @@ export default function Pricing() {
               <h2 className="text-3xl font-semibold ">Design</h2>
               <div className="flex items-center gap-2 bg-green-900 bg-opacity-20 px-3 py-1 rounded-full">
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                <span className="text-sm font-medium text-green-400">Available</span>
+                <span className="text-sm font-medium text-green-400">
+                  Available
+                </span>
               </div>
             </div>
 
@@ -308,7 +350,9 @@ export default function Pricing() {
             <div className="mb-5">
               <div className="flex items-center gap-2 ">
                 <div>
-                  <span className="text-3xl font-semibold text-white">$2,490</span>
+                  <span className="text-3xl font-semibold text-white">
+                    $2,490
+                  </span>
                 </div>
                 <div className="flex items-center w-full h-full">
                   <span className="text-gray-400 text-sm">/ month</span>
@@ -327,8 +371,11 @@ export default function Pricing() {
                     key={index}
                     className={`flex items-center gap-3 text-gray-200' : 'text-gray-600'`}
                   >
-                    <div className={`rounded-full p-[1px] ${feature.included ? 'bg-white' : 'bg-white/70'
-                      } `}>
+                    <div
+                      className={`rounded-full p-[1px] ${
+                        feature.included ? "bg-white" : "bg-white/70"
+                      } `}
+                    >
                       {feature.included ? (
                         <Check className="w-3 h-3 text-black flex-shrink-0" />
                       ) : (
@@ -348,7 +395,7 @@ export default function Pricing() {
 
             {/* Footer */}
             <p className="text-center text-gray-400">
-              Got questions?{' '}
+              Got questions?{" "}
               <a href="#" className="text-white underline hover:no-underline">
                 Book a call
               </a>
@@ -358,10 +405,14 @@ export default function Pricing() {
           <div className="w-full bg-white border-2 p-8">
             {/* Header with Badge */}
             <div className="flex items-start justify-between mb-2">
-              <h2 className="text-3xl text-black font-semibold ">Design + Dev</h2>
+              <h2 className="text-3xl text-black font-semibold ">
+                Design + Dev
+              </h2>
               <div className="flex items-center gap-2 bg-green-900 bg-opacity-20 px-3 py-1 rounded-full">
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                <span className="text-sm font-medium text-green-400">Available</span>
+                <span className="text-sm font-medium text-green-400">
+                  Available
+                </span>
               </div>
             </div>
 
@@ -374,7 +425,9 @@ export default function Pricing() {
             <div className="mb-5">
               <div className="flex items-center gap-2 ">
                 <div>
-                  <span className="text-3xl font-semibold text-black">$2,490</span>
+                  <span className="text-3xl font-semibold text-black">
+                    $2,490
+                  </span>
                 </div>
                 <div className="flex items-center w-full h-full">
                   <span className="text-black/50 text-sm">/ month</span>
@@ -389,18 +442,13 @@ export default function Pricing() {
               </h3>
               <ul className="space-y-3">
                 {features.map((feature, index) => (
-                  <li
-                    key={index}
-                    className={`flex items-center gap-3 `}
-                  >
+                  <li key={index} className={`flex items-center gap-3 `}>
                     <div className={`rounded-full p-[1px] bg-black`}>
-
                       <Check className="w-3 h-3 text-white flex-shrink-0" />
-
-
-
                     </div>
-                    <span className="text-sm text-black/70">{feature.name}</span>
+                    <span className="text-sm text-black/70">
+                      {feature.name}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -413,7 +461,7 @@ export default function Pricing() {
 
             {/* Footer */}
             <p className="text-center text-black/50">
-              Got questions?{' '}
+              Got questions?{" "}
               <a href="#" className="text-black underline hover:no-underline">
                 Book a call
               </a>
