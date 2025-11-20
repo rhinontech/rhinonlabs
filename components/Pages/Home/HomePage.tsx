@@ -8,6 +8,7 @@ import Pricing from "./Pricing/Pricing";
 import Faq from "./Faq/Faq";
 import Hero from "./Hero/Hero";
 import { motion } from "framer-motion";
+import Testimonials2 from "./Testimonials2/Testimonials2";
 
 const HomePage = () => {
   return (
@@ -26,6 +27,7 @@ const HomePage = () => {
       <Process />
       <Feature />
       <Testimonials />
+      <Testimonials2 />
       <Pricing />
       <Faq />
     </div>
