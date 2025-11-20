@@ -1,31 +1,11 @@
 'use client'
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 
 
-const slides = [
-    {
-        id: 1,
-        image: "https://i.pinimg.com/1200x/01/51/01/015101cfe267c0121d3090cb7c50c3e2.jpg",
-        title: "LIVE SESSIONS",
-    },
-    {
-        id: 2,
-        image: "https://i.pinimg.com/1200x/cf/22/e7/cf22e7cf7e6c8e954b0d08c367c48ba9.jpg",
-        title: "COMMUNITY MEETUPS",
-    },
-    {
-        id: 3,
-        image: "https://i.pinimg.com/1200x/74/7c/a6/747ca61f72a40e64f2c6fdabaeeb1bc2.jpg",
-        title: "LEARN BY BUILDING",
-    },
-    {
-        id: 4,
-        image: "https://i.pinimg.com/736x/e3/bf/11/e3bf11f2d1a755f5128fd37b0cacdb33.jpg",
-        title: "LEARN BY BUILDING",
-    },
-];
+import { projects as slides } from "./data";
 
 const ProjectsPage = () => {
     return (
@@ -63,7 +43,7 @@ const ProjectsPage = () => {
                             animate={{ opacity: 1, y: 0, }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                             viewport={{ once: true }} // 👈 only animate on first view
-                        >Altair delivers top-tier design services through a simple subscription model. No contracts, no hidden fees – just consistent, high-quality design.</motion.p>
+                        >Rhinon Web delivers mission-critical digital platforms for forward-thinking enterprises. We build scalable, high-performance tools that drive business growth.</motion.p>
                     </div>
                     <motion.div
                         className="grid grid-cols-2 max-md:grid-cols-1 gap-5"
@@ -81,7 +61,7 @@ const ProjectsPage = () => {
                         transition={{
                             duration: 0.8,
                             ease: "easeOut",
-                            delay:0.5
+                            delay: 0.5
                         }}
                         viewport={{ once: true }}
                     >
@@ -89,7 +69,7 @@ const ProjectsPage = () => {
                             <div key={slide.id} className="group border border-white/30 relative w-full h-[450px] max-md:h-[300px] overflow-hidden cursor-pointer">
                                 {/* IMAGE */}
                                 <img
-                                    src={slide.image}
+                                    src={slide.images[0]}
                                     alt="project"
                                     className="w-full h-full object-cover transition-all duration-500 group-hover:opacity-70"
                                 />
@@ -100,11 +80,13 @@ const ProjectsPage = () => {
                                 {/* CONTENT ON HOVER */}
                                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                                     <h3 className="text-white text-center text-2xl font-semibold">{slide.title}</h3>
-                                    <p className="text-gray-200 text-center text-sm tracking-wide">WEB DESIGN</p>
+                                    <p className="text-gray-200 text-center text-sm tracking-wide">{slide.category}</p>
 
-                                    <button className="mt-3 px-5 py-2 bg-white/20 text-white rounded-full backdrop-blur-md border border-white/30 hover:bg-white/30 transition">
-                                        View Project
-                                    </button>
+                                    <Link href={`/projects/${slide.id}`}>
+                                        <button className="mt-3 px-5 py-2 bg-white/20 text-white rounded-full backdrop-blur-md border border-white/30 hover:bg-white/30 transition">
+                                            View Case Study
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         ))}

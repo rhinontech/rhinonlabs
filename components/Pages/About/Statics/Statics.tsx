@@ -6,18 +6,18 @@ import { motion } from "framer-motion";
 const statics = [
     {
         number: 98,
-        title: 'Year of Expertise',
-        subs: "Proven experience in delivering results.",
+        title: 'Client Retention',
+        subs: "Building long-term partnerships.",
     },
     {
-        number: 98,
-        title: 'Year of Expertise',
-        subs: "Proven experience in delivering results.",
+        number: 50,
+        title: 'Enterprise Projects',
+        subs: "Delivered for global organizations.",
     },
     {
-        number: 98,
-        title: 'Year of Expertise',
-        subs: "Proven experience in delivering results.",
+        number: 100,
+        title: 'On-Time Delivery',
+        subs: "Precision in execution.",
     }
 ]
 
@@ -26,15 +26,15 @@ const Statics = () => {
         <div className=" py-20 px-5 flex flex-col gap-20 max-w-[1200px] mx-auto" >
             <div className="flex flex-col gap-5">
                 <p>BY THE NUMBERS</p>
-                <h2 className="text-3xl md:text-5xl lg:text-7xl"> Our Impact <br /> and Expertise</h2>
+                <h2 className="text-3xl md:text-5xl lg:text-7xl"> Our Impact <br /> by the numbers</h2>
             </div>
             <div className='grid grid-cols-1 gap-3 w-full  md:grid-cols-2 lg:grid-cols-3'>
                 {statics.map((stat, index) => (
                     <motion.div
                         key={index}
                         className="border-t flex flex-col gap-5"
-                        initial={{ opacity: 0, y:20 }}
-                        whileInView={{ opacity: 1, y:0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         viewport={{ once: true }} // 👈 only animate on first view
                     >

@@ -42,7 +42,7 @@ const Hero = () => {
           <div className="flex flex-col gap-0">
             <TextGenerateEffect
               className="text-center lg:text-7xl md:text-5xl text-4xl font-normal"
-              words={"Your Digital Product <br /> Re-Engineered for Scale"}
+              words={"Your Digital Product, <br /> Re-Engineered for Scale"}
             />
           </div>
           <motion.p
@@ -54,6 +54,7 @@ const Hero = () => {
           >
             Rhinon Web builds powerful, enterprise-grade dashboards, web apps,
             internal tools, and mission-critical digital platforms.
+            No subscriptions. No generic templates. Just tailored solutions designed to fit the way your business works.
           </motion.p>
         </div>
         <motion.div
@@ -65,7 +66,7 @@ const Hero = () => {
         >
           <div className="">
             <Button className="bg-white text-black hover:bg-gray-200 px-4 py-4 md:px-6 md:py-6 text-base font-semibold rounded-none border-3 border-black/30">
-              Get Started
+              Start a Project
             </Button>
           </div>
 
@@ -104,7 +105,7 @@ const Hero = () => {
                 ))}
               </div>
               <span className="text-white/70 text-sm">
-                Trusted by 36+ businesses
+                Trusted by leading enterprises & fast-growing teams worldwide.
               </span>
             </div>
           </div>
@@ -117,8 +118,8 @@ const Hero = () => {
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
         viewport={{ once: true }} // 👈 only animate on first view
       >
-        <span>Latest Project</span>
-        <span>2024 - 2025</span>
+        <span>2024 – 2025 Case Study Showcase</span>
+        <span>Live Sessions • Dedicated Teams • Enterprise Delivery</span>
       </motion.div>
 
       <motion.div

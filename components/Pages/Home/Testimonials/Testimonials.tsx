@@ -24,8 +24,8 @@ export const testimonials: Testimonial[] = [
   },
   {
     text: "The speed, efficiency, and attention to detail were unmatched.",
-    authorImg: "https://randomuser.me/api/portraits/men/2.jpg",
-    authorName: "James Anderson",
+    authorImg: "https://randomuser.me/api/portraits/men/3.jpg",
+    authorName: "Michael Chen",
     authorPost: "Head of Engineering",
   },
 ];

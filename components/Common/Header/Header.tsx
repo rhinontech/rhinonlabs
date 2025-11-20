@@ -8,8 +8,9 @@ import Image from "next/image";
 
 const menuItems = [
   { name: "Home", href: "/" },
-  { name: "Portfolio", href: "/projects" },
+  { name: "Case Studies", href: "/projects" },
   { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact-us" },
 ];
 
 export const HeroHeader = () => {
@@ -111,19 +112,6 @@ export const HeroHeader = () => {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                {/* Book a Demo Button */}
-                <div className="w-full sm:w-auto flex bg-foreground/10 rounded-2xl border p-1 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-foreground/20">
-                  <Button
-                    asChild
-                    size="sm"
-                    className="flex-1 sm:flex-initial h-[42px] rounded-xl px-5 text-sm font-medium bg-blue-900 hover:bg-blue-900 text-white transition-all duration-300 hover:text-white"
-                  >
-                    <Link href="/book-demo">
-                      <span className="text-nowrap">Book a Demo</span>
-                    </Link>
-                  </Button>
-                </div>
-
                 {/* Get Started Button */}
                 <div className="w-full sm:w-auto flex  p-1 transition-all duration-300 hover:scale-105 hover:shadow-lg ">
                   <Button
@@ -132,8 +120,8 @@ export const HeroHeader = () => {
                     variant="ghost"
                     className="flex-1 sm:flex-initial h-[42px] rounded-xl px-5 text-sm font-medium border border-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
                   >
-                    <Link href="https://app.rhinontech.com/auth/signup">
-                      <span className="text-nowrap">Get Started</span>
+                    <Link href="/contact-us">
+                      <span className="text-nowrap">Start a Project</span>
                     </Link>
                   </Button>
                 </div>

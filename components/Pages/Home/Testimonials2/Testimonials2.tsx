@@ -11,7 +11,7 @@ const services = [
     "Workflow Automation Interfaces",
     "Analytics & Reporting Dashboards",
     "Custom Design Systems",
-    "React / Next / Angular",
+    "React / Framer / Figma Design Execution",
 ]
 
 const card = [
@@ -33,7 +33,7 @@ const Testimonials2 = () => {
 
             <div className="flex flex-col justify-center items-center gap-10">
                 <div className="flex flex-col gap-3">
-                    <p className="text-center w-full">Testimonials</p>
+                    <p className="text-center w-full">Our Core Expertise</p>
                     <h2 className="text-center w-full text-7xl max-md:text-5xl max-sm:text-3xl">What We Work On</h2>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2 max-w-3xl">
@@ -65,7 +65,7 @@ const Testimonials2 = () => {
                     duration: 0.8,
                     ease: "easeOut",
                 }}
-                viewport={{ once: true, amount:0.4 }}
+                viewport={{ once: true, amount: 0.4 }}
             >
                 {card.map((card) => (
                     <div className="hover:opacity-70 transition-all duration-300 relative h-[400px] p-5 text-center flex items-end justify-center">

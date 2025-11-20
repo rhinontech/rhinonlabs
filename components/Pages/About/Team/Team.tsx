@@ -25,8 +25,8 @@ const Team = () => {
     return (
         <div className=" py-20 px-5 flex flex-col items-center gap-10 max-w-[1200px] mx-auto" >
             <div className="flex flex-col gap-5">
-                <p className="text-center">TEAM</p>
-                <h2 className="text-center lg:text-7xl md:text-5xl text-3xl ">The Faces Behind Rhinon</h2>
+                <p className="text-center">LEADERSHIP</p>
+                <h2 className="text-center lg:text-7xl md:text-5xl text-3xl ">Expertise Led By Builders</h2>
             </div>
             <div className="flex flex-col w-full gap-5">
                 <div className="grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 w-full gap-3">
@@ -62,12 +62,12 @@ const Team = () => {
                 </div>
                 <motion.div
                     className="flex flex-col border gap-20 max-md:gap-10 p-10 bg-[url('https://framerusercontent.com/images/q1aFGNfaXt7u0fNbIGobxcvPI.png?scale-down-to=2048')] bg-cover bg-center "
-                    initial={{ opacity: 0}}
+                    initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.6, ease: "easeOut", }}
-                    viewport={{ once: true, amount:0.5 }} // 👈 only animate on first view
+                    viewport={{ once: true, amount: 0.5 }} // 👈 only animate on first view
                 >
-                    <h2 className="w-full text-2xl">Ready for a new chapter?</h2>
+                    <h2 className="w-full text-2xl">Join our mission?</h2>
                     <div className="flex max-md:flex-col gap-5">
                         <p className="text-white/70 max-w-sm">
                             If you’d like to work on projects that matter, check out our open positions and apply.

@@ -12,23 +12,23 @@ interface FAQItem {
 const faqItems: FAQItem[] = [
     {
         id: 1,
-        question: 'How customizable is the platform?',
-        answer: 'Our platform is fully customizable with extensive theming options. You can easily change colors, fonts, layouts, and more to match your brand identity—no coding required. We provide a visual editor that makes customization intuitive and quick.'
+        question: 'How do project engagements work?',
+        answer: 'We start with a discovery call, define your requirements, and create a tailored proposal including timeline, deliverables, and execution plan.'
     },
     {
         id: 2,
-        question: 'Is it compatible with all devices?',
-        answer: 'Yes, our platform is 100% responsive and works seamlessly across all devices including desktops, tablets, and smartphones. We ensure consistent performance and user experience across different screen sizes and browsers.'
+        question: 'Do you work with existing systems?',
+        answer: 'Absolutely. We frequently redesign outdated dashboards and integrate with existing backend APIs or infrastructure.'
     },
     {
         id: 3,
-        question: 'How quickly can I launch?',
-        answer: 'You can launch your project in minutes. With our pre-built templates and drag-and-drop interface, you can get started immediately without any technical knowledge. Most users are ready to go live within 30 minutes.'
+        question: 'Can you handle complex enterprise workflows?',
+        answer: 'Yes — multi-role dashboards, approval flows, analytics systems, and large datasets are our core expertise.'
     },
     {
         id: 4,
-        question: 'Can it scale with my business growth?',
-        answer: 'Absolutely. Our infrastructure is built for scalability and can handle growth from small projects to enterprise-level applications. We automatically optimize performance as your user base and content grow.'
+        question: 'Do you also develop the designs?',
+        answer: 'We provide both UI/UX design and full web development, depending on your needs.'
     },
 ];
 

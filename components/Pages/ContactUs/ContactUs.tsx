@@ -35,7 +35,7 @@ const ContactUs = () => {
                         >CONTACT</motion.p>
 
                         <div className="flex flex-col gap-0">
-                            <TextGenerateEffect className="lg:text-7xl md:text-5xl text-4xl" words={"Let’s Talk More"} />
+                            <TextGenerateEffect className="lg:text-7xl md:text-5xl text-4xl" words={"Start a Project"} />
 
                         </div>
                         <motion.p
@@ -44,7 +44,7 @@ const ContactUs = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                             viewport={{ once: true }} // 👈 only animate on first view
-                        >Book your free consultation to discuss your project.</motion.p>
+                        >Ready to build something scalable? Let's talk.</motion.p>
                     </div>
                     <motion.div
                         className="w-[700px] max-md:w-full p-5 bg-white/1 backdrop-blur-md border border-white/10 shadow-xl"
@@ -67,29 +67,38 @@ const ContactUs = () => {
                                     <Label>EMAIL</Label>
                                     <Input
                                         className="px-3 py-6 rounded-none border border-white/10 bg-white/5 backdrop-blur-lg  "
-                                        placeholder="jane@example.com"
+                                        placeholder="jane@company.com"
                                     />
                                 </div>
                             </div>
 
-                            <div className="flex flex-col gap-3">
-                                <Label>SUBJECT</Label>
-                                <Input
-                                    className="px-3 py-6 rounded-none border border-white/10 bg-white/5 backdrop-blur-lg  "
-                                    placeholder="What your query is about..."
-                                />
+                            <div className="grid grid-cols-2 max-md:grid-cols-1 gap-3">
+                                <div className="flex flex-col gap-3">
+                                    <Label>COMPANY</Label>
+                                    <Input
+                                        className="px-3 py-6 rounded-none border border-white/10 bg-white/5 backdrop-blur-lg "
+                                        placeholder="Company Name"
+                                    />
+                                </div>
+                                <div className="flex flex-col gap-3">
+                                    <Label>PROJECT TYPE</Label>
+                                    <Input
+                                        className="px-3 py-6 rounded-none border border-white/10 bg-white/5 backdrop-blur-lg  "
+                                        placeholder="Dashboard, SaaS, Internal Tool..."
+                                    />
+                                </div>
                             </div>
 
                             <div className="flex flex-col gap-3">
                                 <Label>MESSAGE</Label>
                                 <Textarea
                                     className="min-h-[150px] px-3 py-3 rounded-none border border-white/10 bg-white/5 backdrop-blur-lg  "
-                                    placeholder="Enter your message..."
+                                    placeholder="Tell us about your project goals..."
                                 />
                             </div>
 
-                            <Button type="submit" className="rounded-none py-6 font-semibold text-lg">
-                                Submit
+                            <Button type="submit" className="rounded-none py-6 font-semibold text-lg bg-white text-black hover:bg-gray-200">
+                                Send Request
                             </Button>
                         </form>
                     </motion.div>

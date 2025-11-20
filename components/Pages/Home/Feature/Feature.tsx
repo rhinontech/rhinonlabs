@@ -4,18 +4,28 @@ import { motion } from "framer-motion";
 const featrues = [
   {
     img: "https://framerusercontent.com/images/DcZTJRkP9j3qoL7SfBczfMtFIW8.jpg?scale-down-to=1024",
-    title: "Product design for SaaS & enterprise software",
-    sub: "No fine print. No confusing pricing tiers. Just clarity and results.",
+    title: "Dashboard UI/UX",
+    sub: "Intuitive, data-driven interfaces designed for clarity and control.",
   },
   {
     img: "https://framerusercontent.com/images/DcZTJRkP9j3qoL7SfBczfMtFIW8.jpg?scale-down-to=1024",
     title: "Web applications",
-    sub: "No fine print. No confusing pricing tiers. Just clarity and results.",
+    sub: "Scalable, high-performance web apps built for enterprise needs.",
+  },
+  {
+    img: "https://framerusercontent.com/images/DcZTJRkP9j3qoL7SfBczfMtFIW8.jpg?scale-down-to=1024",
+    title: "Internal tools",
+    sub: "Streamline operations with custom tools tailored to your workflows.",
   },
   {
     img: "https://framerusercontent.com/images/DcZTJRkP9j3qoL7SfBczfMtFIW8.jpg?scale-down-to=1024",
     title: "Multi-role admin systems",
-    sub: "No fine print. No confusing pricing tiers. Just clarity and results.",
+    sub: "Complex permission management made simple and secure.",
+  },
+  {
+    img: "https://framerusercontent.com/images/DcZTJRkP9j3qoL7SfBczfMtFIW8.jpg?scale-down-to=1024",
+    title: "Product design for SaaS & enterprise software",
+    sub: "User-centric design that drives adoption and retention.",
   },
 ];
 
@@ -57,7 +67,7 @@ const Feature = () => {
             >
               <div className="w-full px-7 pb-7 flex flex-col gap-3">
                 <h2 className="font-semibold text-lg">{featrue.title}</h2>
-                <p>{featrue.sub}.</p>
+                <p>{featrue.sub}</p>
               </div>
             </div>
           </motion.div>

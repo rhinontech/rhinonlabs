@@ -16,12 +16,12 @@ export type SocialLink = {
     href: string;
 };
 
-const navLinks: NavLinks[] = [
-    { title: "Home", href: "#" },
-    { title: "Portfolio", href: "#" },
-    { title: "About", href: "#" },
-    { title: "Contact", href: "#" },
-]
+const navLinks = [
+    { title: "Home", href: "/" },
+    { title: "Case Studies", href: "/projects" },
+    { title: "About", href: "/about" },
+    { title: "Contact", href: "/contact-us" },
+];
 
 const socialLinks: SocialLink[] = [
     { icon: Twitter, href: "#" },
@@ -35,18 +35,18 @@ const Footer = () => {
         <div className="[mask-image:linear-gradient(to_bottom,transparent_0%,white_30%,white_100%)]
                 mask-mode:luminance">
             <div className="bg-[url('https://framerusercontent.com/images/OtnmdtGgpJnjSFqMANBQ2epErk.jpg?scale-down-to=2048')] bg-cover bg-center">
-    
+
                 <div className=" max-w-6xl flex flex-col gap-16 pt-40 mx-auto pb-16 px-5">
 
                     {/* Header */}
                     <div className="flex flex-col gap-5">
                         <p>Get started</p>
-                       
-                            <TextGenerateEffect className="lg:text-7xl md:text-6xl text-4xl" words={"Still Not Sure <br /> If It’s Right For You?"} />
+
+                        <TextGenerateEffect className="lg:text-7xl md:text-6xl text-4xl" words={"Still Exploring Options? <br /> Let’s Talk About Your Project."} />
                         <div className="flex  mt-5 max-md:flex-col  gap-5 md:gap-10">
                             <div className="">
-                                <Button className="bg-white text-black hover:bg-gray-200 md:px-6 md:py-6 px-4 py-4 text-base font-semibold rounded-none border-3 border-black/30">
-                                    Get Started
+                                <Button asChild className="bg-white text-black hover:bg-gray-200 md:px-6 md:py-6 px-4 py-4 text-base font-semibold rounded-none border-3 border-black/30">
+                                    <Link href="/contact-us">Start a Project</Link>
                                 </Button>
                             </div>
 
@@ -72,7 +72,7 @@ const Footer = () => {
                                             <Star key={i} className="w-3 h-3 fill-white text-white" />
                                         ))}
                                     </div>
-                                    <span className="text-white/70 text-sm">Trusted by 36+ businesses</span>
+                                    <span className="text-white/70 text-sm">Trusted by modern organizations worldwide.</span>
                                 </div>
                             </div>
                         </div>
@@ -90,8 +90,8 @@ const Footer = () => {
 
                     {/* Social Links */}
                     <div className="flex w-fit flex-col gap-5">
-                        <h2 className="text-2xl font-semibold">Rhinon</h2>
-                        <p className="text-white/80">No-contract design subscription.</p>
+                        <h2 className="text-2xl font-semibold">Rhinon Web</h2>
+                        <p className="text-white/80">Enterprise dashboard & product design studio.</p>
                         <div className="flex gap-5">
                             {socialLinks.map((sl, index) => (
                                 <div key={index} className="h-10 w-10 border-2 hover:bg-amber-600 transition-color duration-300 rounded-full flex items-center justify-center">
@@ -111,7 +111,7 @@ const Footer = () => {
             </div>
             <div className="py-10 border-t-2">
                 <div className="max-w-6xl mx-auto">
-                    <p className="text-white/80">© 2025 Wize. All rights reserved.</p>
+                    <p className="text-white/80">© 2025 Rhinon Web. All rights reserved.</p>
                 </div>
             </div>
         </div>
