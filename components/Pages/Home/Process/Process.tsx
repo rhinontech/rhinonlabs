@@ -74,7 +74,7 @@ export default function Process() {
                   </div>
                 </div>
               </div>
-              <div className="h-[350px] border-2 w-full bg-[url('https://framerusercontent.com/images/DcZTJRkP9j3qoL7SfBczfMtFIW8.jpg?scale-down-to=1024')] bg-cover bg-center"></div>
+              <div className="h-[350px] border-2 w-full bg-[url('/assets/path/1.png')] bg-cover bg-center"></div>
             </div>
           </div>
         </div>

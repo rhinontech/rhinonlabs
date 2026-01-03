@@ -27,7 +27,7 @@ const Hero = () => {
           />
         </div>
       </motion.div>
-      <div className="pt-44 max-sm:pt-20 px-5 pb-10 flex flex-col gap-10 max-w-5xl mx-auto">
+      <div className="pt-44 max-sm:pt-20 px-5 pb-14 flex flex-col gap-10 max-w-5xl mx-auto">
         <div className="flex flex-col gap-5 items-center">
           <motion.p
             className="text-center"
@@ -111,26 +111,30 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-      <motion.div
-        className="  flex justify-between px-5 gap-10 max-w-4xl mx-auto"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-        viewport={{ once: true }} // 👈 only animate on first view
-      >
-        <span>2024 – 2025 Case Study Showcase</span>
-        <span>Live Sessions • Dedicated Teams • Enterprise Delivery</span>
-      </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-        viewport={{ once: true }} // 👈 only animate on first view
-        className="pb-3"
-      >
-        <Photos />
-      </motion.div>
+      <div className="flex flex-col gap-5">
+
+        <motion.div
+          className="flex justify-between px-5 gap-10 max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+          viewport={{ once: true }} // 👈 only animate on first view
+        >
+          <span>2024 – 2025 Case Study Showcase</span>
+          <span>Live Sessions • Dedicated Teams • Enterprise Delivery</span>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+          viewport={{ once: true }}
+          className="pb-3"
+        >
+          <Photos />
+        </motion.div>
+      </div>
     </div>
   );
 };

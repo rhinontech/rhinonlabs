@@ -18,12 +18,11 @@ const HomePage = () => {
         initial={{ opacity: 0, }}
         animate={{ opacity: 1, }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-        viewport={{ once: true }} // 👈 only animate on first view
+        viewport={{ once: true }}
       >
         <svgImages.starBgImage />
       </motion.div>
       <Hero />
-
       <Process />
       <Feature />
       <Testimonials />

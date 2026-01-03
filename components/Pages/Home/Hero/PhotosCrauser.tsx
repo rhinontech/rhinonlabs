@@ -7,7 +7,7 @@ const SLIDE_DURATION = 1500; // milliseconds
 const slides = [
   {
     id: 1,
-    image: "https://i.pinimg.com/1200x/01/51/01/015101cfe267c0121d3090cb7c50c3e2.jpg",
+    image: "/assets/hero/1.png",
     title: "LIVE SESSIONS",
     subtitle: "Collaborate, connect, and learn together",
     tags: [
@@ -19,7 +19,7 @@ const slides = [
   },
   {
     id: 2,
-    image: "https://i.pinimg.com/1200x/cf/22/e7/cf22e7cf7e6c8e954b0d08c367c48ba9.jpg",
+    image: "/assets/hero/2.png",
     title: "COMMUNITY MEETUPS",
     subtitle: "Build lasting professional connections",
     tags: [
@@ -31,7 +31,7 @@ const slides = [
   },
   {
     id: 3,
-    image: "https://i.pinimg.com/1200x/74/7c/a6/747ca61f72a40e64f2c6fdabaeeb1bc2.jpg",
+    image: "/assets/hero/3.png",
     title: "LEARN BY BUILDING",
     subtitle: "Interactive learning experiences in real-time",
     tags: [
@@ -132,7 +132,7 @@ export default function CarouselSlideshow() {
               }}
             >
               <div className="relative w-[300px] border border-white/20 sm:w-[90%]  lg:w-full h-[650px] max-sm:h-[400px] p-[25px] shadow-2xl"
-                >
+              >
 
                 {/* Gradient overlay for left card (left to right) */}
                 <div
