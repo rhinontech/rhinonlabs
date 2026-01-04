@@ -2,25 +2,12 @@
 import { useRef } from "react";
 import ScrollBeam from "./ScrollBeam";
 import { useScroll, useTransform, motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Process() {
   const ref1 = useRef<HTMLDivElement>(null);
   const ref2 = useRef<HTMLDivElement>(null);
 
-  //   // Track scroll progress for this element
-  //   const { scrollYProgress } = useScroll({
-  //     target: ref1,
-  //     offset: ["start center", "end center"],
-  //     // "start center" → when top of element hits center of screen
-  //     // "end center"   → when bottom of element hits center of screen
-  //   });
-
-  //   // Interpolate color between two values based on scroll position
-  //   const backgroundColor = useTransform(
-  //   scrollYProgress,
-  //   [0, 1],
-  //   ["#0f172a", "#ffffff"] // slate-900 → white
-  // );
   const bg1 = useTransform(
     useScroll({ target: ref1, offset: ["start center", "end center"] })
       .scrollYProgress,
@@ -68,13 +55,20 @@ export default function Process() {
                     users, and product goals. Expect clarity, not confusion.
                   </p>
                 </div>
-                <div className="relative flex justify-end items-end w-[100px]">
-                  <div className="w-fit border-2 px-3 py-1 rounded-3xl ">
+                <div className="hidden sm:block">
+                  <div className="w-fit border border-white/10 px-4 py-1.5 rounded-full bg-white/5 text-sm backdrop-blur-sm text-muted-foreground">
                     Step 1
                   </div>
                 </div>
               </div>
-              <div className="h-[450px] border-2 w-full bg-[url('/assets/path/discovery_strategy.png')] bg-cover bg-center"></div>
+              <div className="h-[450px] border-2 w-full relative overflow-hidden rounded-lg">
+                <Image
+                  src="/assets/path/discovery_strategy.png"
+                  alt="Discovery & Strategy"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -99,13 +93,20 @@ export default function Process() {
                     crafted for usability, scalability, and precision.
                   </p>
                 </div>
-                <div className="relative flex justify-end items-end w-[100px]">
-                  <div className="w-fit border-2 px-3 py-1 rounded-3xl ">
+                <div className="hidden sm:block">
+                  <div className="w-fit border border-white/10 px-4 py-1.5 rounded-full bg-white/5 text-sm backdrop-blur-sm text-muted-foreground">
                     Step 2
                   </div>
                 </div>
               </div>
-              <div className="h-[450px] border-2 w-full bg-[url('/assets/path/design_architecture.png')] bg-cover bg-center"></div>
+              <div className="h-[450px] border-2 w-full relative overflow-hidden rounded-lg">
+                <Image
+                  src="/assets/path/design_architecture.png"
+                  alt="Design & Architecture"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -136,8 +137,16 @@ export default function Process() {
                   </div>
                 </div>
               </div>
-              <div className="h-[450px] w-full shadow-2xl overflow-hidden bg-[url('https://framerusercontent.com/images/VeiBx4I8kxeohO3NysSUJ3HNiN8.jpg?scale-down-to=2048')] flex items-center">
-                <div className="flex w-fit animate-scroll-slow gap-4 px-4">
+              <div className="h-[450px] w-full shadow-2xl overflow-hidden relative flex items-center rounded-lg">
+                {/* Background for step 3 */}
+                <Image
+                  src="https://framerusercontent.com/images/VeiBx4I8kxeohO3NysSUJ3HNiN8.jpg?scale-down-to=2048"
+                  alt="Build Background"
+                  fill
+                  className="object-cover"
+                />
+
+                <div className="flex w-fit animate-scroll-slow gap-4 px-4 z-10">
                   {[...Array(4)].map((_, setIndex) => (
                     <div key={setIndex} className="flex gap-4 shrink-0">
                       {[
@@ -145,11 +154,12 @@ export default function Process() {
                         { src: "/assets/path/integration_cloud.png", label: "Integrate" },
                         { src: "/assets/path/delivery_mobile.png", label: "Deliver" },
                       ].map((item, i) => (
-                        <div key={i} className="relative w-[300px] h-[350px] overflow-hidden border border-white/10 group">
-                          <img
+                        <div key={i} className="relative w-[300px] h-[350px] overflow-hidden border border-white/10 group rounded-md">
+                          <Image
                             src={item.src}
                             alt={item.label}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
                           />
                           <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                             <p className="text-white font-medium">{item.label}</p>

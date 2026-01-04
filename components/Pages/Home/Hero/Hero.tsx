@@ -1,18 +1,18 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
-
 import Photos from "./PhotosCrauser";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Hero = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden relative min-h-screen flex flex-col justify-center">
       <motion.div
-        className="absolute inset-0 top-64 max-sm:top-96 -z-10"
+        className="absolute inset-0 top-64 max-sm:top-52 -z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.8, ease: "easeOut", delay: 0.6 }}
@@ -20,19 +20,22 @@ const Hero = () => {
       >
         <div
           className="mask-[linear-gradient(to_bottom,transparent,white_30%,white_60%,transparent)]
-                mask-mode:luminance"
+                mask-mode:luminance relative w-full h-full"
         >
-          <img
+          <Image
             src="https://framerusercontent.com/images/oEeFUDDyOcLHiBBci1NNXPxqE.jpg?scale-down-to=2048"
-            className="w-full h-full object-cover"
-            alt=""
+            fill
+            className="object-cover"
+            alt="Hero Background"
+            priority
+            sizes="100vw"
           />
         </div>
       </motion.div>
-      <div className="pt-44 max-sm:pt-20 px-5 pb-14 flex flex-col gap-10 max-w-5xl mx-auto">
+      <div className="pt-32 max-sm:pt-24 px-5 pb-14 flex flex-col gap-10 max-w-5xl mx-auto w-full">
         <div className="flex flex-col gap-5 items-center">
           <motion.p
-            className="text-center uppercase"
+            className="text-center uppercase text-sm md:text-base tracking-widest"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -41,33 +44,37 @@ const Hero = () => {
             Your Design Agency Template
           </motion.p>
 
-          <div className="flex flex-col gap-0">
+          <div className="flex flex-col gap-0 w-full">
             <TextGenerateEffect
-              className="text-center lg:text-7xl md:text-5xl text-4xl font-semibold"
+              className="text-center lg:text-7xl md:text-5xl text-4xl font-semibold leading-tight"
               words={"Your Digital Product, <br /> Re-Engineered for Scale"}
             />
           </div>
           <motion.p
-            className="text-center max-w-2xl text-lg text-white/80"
+            className="text-center max-w-2xl text-base md:text-lg text-white/80 leading-relaxed px-4"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >
             Rhinon Web builds powerful, enterprise-grade dashboards, web apps,
-            internal tools, and mission-critical digital platforms.
-            No subscriptions. No generic templates. Just tailored solutions designed to fit the way your business works.
+            internal tools, and mission-critical digital platforms. No
+            subscriptions. No generic templates. Just tailored solutions
+            designed to fit the way your business works.
           </motion.p>
         </div>
         <motion.div
-          className="flex items-center justify-center max-md:flex-col gap-5 md:gap-10"
+          className="flex items-center justify-center flex-col md:flex-row gap-5 md:gap-10"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <div className="">
-            <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6 text-base font-semibold rounded-none border-3 border-black/30" onClick={() => router.push("/contact-us")}>
+          <div className="z-20">
+            <Button
+              className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-lg font-semibold rounded-none border-3 border-black/30 transition-all"
+              onClick={() => router.push("/contact-us")}
+            >
               Start a Project
             </Button>
           </div>
@@ -76,48 +83,47 @@ const Hero = () => {
           <div className="flex items-center gap-4">
             {/* Avatar Stack */}
             <div className="flex -space-x-4">
-              <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
-                <img
-                  src="https://randomuser.me/api/portraits/women/1.jpg"
-                  alt="User 1"
-                  className="w-full h-full rounded-full object-cover"
-                />
-              </div>
-              <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
-                <img
-                  src="https://randomuser.me/api/portraits/men/2.jpg"
-                  alt="User 2"
-                  className="w-full h-full rounded-full object-cover"
-                />
-              </div>
-              <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
-                <img
-                  src="https://randomuser.me/api/portraits/women/3.jpg"
-                  alt="User 3"
-                  className="w-full h-full rounded-full object-cover"
-                />
-              </div>
+              {[1, 2, 3].map((num) => (
+                <div
+                  key={num}
+                  className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center relative overflow-hidden"
+                >
+                  <Image
+                    src={
+                      num === 2
+                        ? `https://randomuser.me/api/portraits/men/${num}.jpg`
+                        : `https://randomuser.me/api/portraits/women/${num}.jpg`
+                    }
+                    alt={`User ${num}`}
+                    fill
+                    className="object-cover"
+                    sizes="48px"
+                  />
+                </div>
+              ))}
             </div>
 
             {/* Rating & Trust Text */}
             <div className="flex flex-col">
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 fill-white text-white" />
+                  <Star
+                    key={i}
+                    className="w-3 h-3 fill-white text-white"
+                  />
                 ))}
               </div>
-              <span className="text-white/80 text-sm font-light mt-1">
-                Trusted by leading enterprises & fast-growing teams worldwide.
+              <span className="text-white/80 text-xs md:text-sm font-light mt-1">
+                Trusted by leading enterprises.
               </span>
             </div>
           </div>
         </motion.div>
       </div>
 
-      <div className="flex flex-col gap-5">
-
+      <div className="flex flex-col gap-5 mt-10">
         <motion.div
-          className="flex justify-between px-5 gap-10 max-w-4xl mx-auto"
+          className="flex flex-col md:flex-row justify-between px-5 gap-5 md:gap-10 max-w-4xl mx-auto text-sm md:text-base text-center md:text-left text-white/70"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}

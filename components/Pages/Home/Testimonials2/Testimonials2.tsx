@@ -1,8 +1,9 @@
 'use client'
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { div } from "framer-motion/client";
 import { Star } from "lucide-react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 
 const services = [
@@ -21,27 +22,30 @@ const card = [
         img: "/assets/hero/1.png",
         title: "Rhinon Tech",
         sub: "AI Customer Engagement Platform",
+        href: "/projects/1",
     },
     {
         img: "/assets/projects/alrooha/image1.png",
         title: "Alrooha",
         sub: "Goods Imports and Export",
+        href: "/projects/2",
     },
 ]
 
 const Testimonials2 = () => {
+    const router = useRouter()
     return (
         <div className="py-10 lg:w-6xl max-md:px-3 px-5 mx-auto flex flex-col space-y-10">
 
             <div className="flex flex-col justify-center items-center gap-10">
                 <div className="flex flex-col gap-3">
-                    <p className="text-center w-full uppercase">Our Core Expertise</p>
-                    <h2 className="text-center w-full text-7xl max-md:text-5xl max-sm:text-3xl">What We Work On</h2>
+                    <p className="text-center w-full uppercase text-sm md:text-base">Our Core Expertise</p>
+                    <h2 className="text-center w-full text-3xl sm:text-5xl md:text-7xl">What We Work On</h2>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2 max-w-3xl">
-                    {services.map((services) => (
-                        <span className="border border-white/10 text-sm  uppercase py-1 px-3 rounded-2xl ">
-                            {services}
+                    {services.map((service, index) => (
+                        <span key={index} className="border border-white/10 text-xs sm:text-sm uppercase py-1 px-3 rounded-2xl ">
+                            {service}
                         </span>
                     ))}
 
@@ -69,19 +73,22 @@ const Testimonials2 = () => {
                 }}
                 viewport={{ once: true, amount: 0.4 }}
             >
-                {card.map((card) => (
-                    <div className="hover:opacity-70 transition-all duration-300 relative h-[400px] p-5 text-center flex items-end justify-center">
+                {card.map((item, index) => (
+                    <div key={index} className="hover:opacity-70 transition-all duration-300 relative h-[400px] p-5 text-center flex items-end justify-center overflow-hidden rounded-lg border border-white/10" onClick={() => router.push(item.href)}>
 
                         {/* Image Layer (masked) */}
-                        <div
-                            className="absolute inset-0 bg-cover bg-center [mask-image:linear-gradient(to_bottom,white_40%,white_60%,transparent)]"
-                            style={{ backgroundImage: `url(${card.img})` }}
-                        ></div>
+                        <Image
+                            src={item.img}
+                            alt={item.title}
+                            fill
+                            className="object-cover [mask-image:linear-gradient(to_bottom,white_40%,white_60%,transparent)]"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                        />
 
-                        {/* Text Layer (clean, no blur) */}
+                        {/* Text Layer */}
                         <div className="relative z-10 w-full">
-                            <h2 className="text-xl font-semibold">{card.title}</h2>
-                            <p className="text-white/70">{card.sub}</p>
+                            <h2 className="text-xl font-semibold">{item.title}</h2>
+                            <p className="text-white/70">{item.sub}</p>
                         </div>
                     </div>
                 ))}
@@ -94,37 +101,28 @@ const Testimonials2 = () => {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 viewport={{ once: true }}
             >
-                <div className="">
-                    <Button className="bg-white text-black hover:bg-gray-200 px-4 py-4 md:px-6 md:py-6 text-base font-semibold rounded-none border-3 border-black/30">
-                        See our work
-                    </Button>
-                </div>
+                <Button
+                    onClick={() => router.push("/projects")}
+                    className="bg-white z-50 text-black hover:bg-gray-200 px-4 py-4 md:px-6 md:py-6 text-base font-semibold rounded-none border-3 border-black/30"
+                >
+                    See our work
+                </Button>
 
                 {/* Social Proof */}
                 <div className="flex items-center gap-4">
                     {/* Avatar Stack */}
                     <div className="flex -space-x-4">
-                        <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/1.jpg"
-                                alt="User 1"
-                                className="w-full h-full rounded-full object-cover"
-                            />
-                        </div>
-                        <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
-                            <img
-                                src="https://randomuser.me/api/portraits/men/2.jpg"
-                                alt="User 2"
-                                className="w-full h-full rounded-full object-cover"
-                            />
-                        </div>
-                        <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
-                            <img
-                                src="https://randomuser.me/api/portraits/women/3.jpg"
-                                alt="User 3"
-                                className="w-full h-full rounded-full object-cover"
-                            />
-                        </div>
+                        {[1, 2, 3].map((num) => (
+                            <div key={num} className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center relative overflow-hidden">
+                                <Image
+                                    src={num === 2 ? `https://randomuser.me/api/portraits/men/${num}.jpg` : `https://randomuser.me/api/portraits/women/${num}.jpg`}
+                                    alt={`User ${num}`}
+                                    fill
+                                    className="object-cover"
+                                    sizes="48px"
+                                />
+                            </div>
+                        ))}
                     </div>
 
                     {/* Rating & Trust Text */}
