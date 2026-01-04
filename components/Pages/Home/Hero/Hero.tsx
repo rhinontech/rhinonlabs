@@ -83,39 +83,25 @@ const Hero = () => {
           <div className="flex items-center gap-4">
             {/* Avatar Stack */}
             <div className="flex -space-x-4">
-              {[1, 2, 3].map((num) => (
-                <div
-                  key={num}
-                  className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center relative overflow-hidden"
-                >
-                  <Image
-                    src={
-                      num === 2
-                        ? `https://randomuser.me/api/portraits/men/${num}.jpg`
-                        : `https://randomuser.me/api/portraits/women/${num}.jpg`
-                    }
-                    alt={`User ${num}`}
-                    fill
-                    className="object-cover"
-                    sizes="48px"
-                  />
-                </div>
-              ))}
+              <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
+                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="User 1" className="w-full h-full rounded-full object-cover" />
+              </div>
+              <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
+                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="User 2" className="w-full h-full rounded-full object-cover" />
+              </div>
+              <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
+                <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="User 3" className="w-full h-full rounded-full object-cover" />
+              </div>
             </div>
 
             {/* Rating & Trust Text */}
-            <div className="flex flex-col">
+            <div className="flex flex-col gap-2">
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-3 h-3 fill-white text-white"
-                  />
+                  <Star key={i} className="w-3 h-3 fill-white text-white" />
                 ))}
               </div>
-              <span className="text-white/80 text-xs md:text-sm font-light mt-1">
-                Trusted by leading enterprises.
-              </span>
+              <span className="text-white/70 text-sm">Trusted by modern organizations worldwide.</span>
             </div>
           </div>
         </motion.div>
