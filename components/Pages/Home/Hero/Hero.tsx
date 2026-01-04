@@ -34,7 +34,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }} // 👈 only animate on first view
+            viewport={{ once: true }}
           >
             Your Design Agency Template
           </motion.p>
@@ -98,6 +98,16 @@ const Hero = () => {
             </div>
 
             {/* Rating & Trust Text */}
+            <div className="flex flex-col">
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-3 h-3 fill-white text-white" />
+                ))}
+              </div>
+              <span className="text-white/80 text-sm font-light mt-1">
+                Trusted by leading enterprises & fast-growing teams worldwide.
+              </span>
+            </div>
             <div className="flex flex-col gap-2">
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (

@@ -105,38 +105,38 @@ export default function Process() {
                   </div>
                 </div>
               </div>
-              <div className="h-[350px] border-2 w-full bg-[url('https://framerusercontent.com/images/PMOGbWVPZGHW2SXHVlvSSRzV1I.jpg?scale-down-to=1024')] bg-cover bg-center"></div>
+              <div className="h-[400px] w-full rounded-2xl border border-white/10 bg-[url('/images/design_architecture.png')] bg-cover bg-center shadow-2xl overflow-hidden transition-all duration-700"></div>
             </div>
           </div>
         </div>
-        <div className="flex ">
+        <div className="flex gap-8">
           {/* Beam div */}
-          <div className="flex flex-col gap-3 justify-center items-center">
+          <div className="flex flex-col gap-3 justify-start items-center pt-2">
             <motion.div
               ref={ref2}
-              className={`h-4 w-4 rounded-full `}
+              className={`h-4 w-4 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]`}
               style={{ backgroundColor: bg2 }}
             ></motion.div>
             <ScrollBeam />
           </div>
           {/* content */}
-          <div className="py-5 pl-5 flex-1">
-            <div className="flex flex-col gap-5">
-              <div className="flex">
-                <div className="flex flex-col flex-1 space-y-2">
-                  <h2 className="text-2xl">Build, Integrate & Deliver</h2>
-                  <p>
+          <div className="flex-1">
+            <div className="flex flex-col gap-8">
+              <div className="flex justify-between items-start">
+                <div className="flex flex-col flex-1 space-y-3">
+                  <h2 className="text-3xl font-semibold">Build, Integrate & Deliver</h2>
+                  <p className="text-muted-foreground text-lg">
                     We turn designs into smooth, high-performance products—built
                     to grow with your business.
                   </p>
                 </div>
-                <div className="relative flex justify-end items-end w-[100px]">
-                  <div className="w-fit border-2 px-3 py-1 rounded-3xl ">
+                <div className="hidden sm:block">
+                  <div className="w-fit border border-white/10 px-4 py-1.5 rounded-full bg-white/5 text-sm backdrop-blur-sm text-muted-foreground">
                     Step 3
                   </div>
                 </div>
               </div>
-              <div className="h-[350px] border-2 w-full bg-[url('https://framerusercontent.com/images/xzHG8YC7yglvNRshvKTUEYEJEBk.jpg?scale-down-to=1024')] bg-cover bg-center"></div>
+              <div className="h-[400px] w-full rounded-2xl border border-white/10 bg-[url('/images/build_delivery.png')] bg-cover bg-center shadow-2xl overflow-hidden transition-all duration-700"></div>
             </div>
           </div>
         </div>

@@ -27,19 +27,23 @@ export const HeroHeader = () => {
 
   return (
     <header>
+      {/* "Shadow from top" - a gradient to ensure visibility if needed, or just the shadow on the nav itself. 
+          Interpreting "shadow from top" as a drop shadow on the navbar + consistent fixed positioning. */}
       <nav
         data-state={menuState && "active"}
-        className="md:fixed z-20 w-full px-2 group"
+        className="fixed top-0 inset-x-0 z-50 flex justify-center pt-4 px-4 transition-all duration-300"
       >
         <div
           className={cn(
-            "mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 ",
-            isScrolled && "bg-background/50 max-w-4xl border lg:px-5"
+            "w-full max-w-5xl rounded-full border border-white/10 bg-black/60 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-300",
+            // Add a subtle top highlight/shadow effect if that's what was meant, typically usually a white/10 border handles this.
+            // "shadow from top" might also mean this:
+            "shadow-[0_1px_0_0_rgba(255,255,255,0.1)_inset]" // Top inner highlight
           )}
         >
-          <div className="relative flex flex-wrap items-center justify-between md:gap-6 gap-3 py-3 lg:gap-0 lg:py-4">
+          <div className="relative flex items-center justify-between gap-6 px-6 py-3">
             {/* Logo + Mobile Menu Button */}
-            <div className="flex w-full justify-between lg:w-auto">
+            <div className="flex shrink-0 items-center">
               <Link
                 href="/"
                 aria-label="home"
@@ -50,31 +54,19 @@ export const HeroHeader = () => {
                   alt="Rhinon Tech Logo"
                   width={100}
                   height={100}
-                  className="object-contain h-10 w-auto"
+                  className="object-contain h-8 w-auto"
                 />
               </Link>
-              {/* Mobile Menu Button */}
-              <button
-                onClick={() => setMenuState(!menuState)}
-                aria-label={menuState ? "Close Menu" : "Open Menu"}
-                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
-              >
-                {menuState ? (
-                  <X className="size-6 duration-200" />
-                ) : (
-                  <Menu className="size-6 duration-200" />
-                )}
-              </button>
             </div>
 
-            {/* Desktop Menu */}
-            <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-              <ul className="flex gap-8 text-sm">
+            {/* Desktop Menu - Centered using absolute positioning trick or just flex-1 justify-center */}
+            <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              <ul className="flex gap-8 text-sm font-medium text-white/80">
                 {menuItems.map((item, index) => (
                   <li key={index}>
                     <Link
                       href={item.href}
-                      className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                      className="hover:text-white hover:scale-105 transition-all duration-200"
                     >
                       {item.name}
                     </Link>
@@ -83,50 +75,64 @@ export const HeroHeader = () => {
               </ul>
             </div>
 
-            {/* Buttons + Mobile Menu */}
-            <div
-              className={cn(
-                // Base: hidden on mobile, flex on desktop
-                "hidden lg:flex w-fit items-center justify-end gap-4 rounded-3xl border-transparent p-0 shadow-none",
+            {/* Buttons + Mobile Menu Toggle */}
+            <div className="flex items-center gap-4">
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setMenuState(!menuState)}
+                aria-label={menuState ? "Close Menu" : "Open Menu"}
+                className="relative z-20 block cursor-pointer lg:hidden text-white"
+              >
+                {menuState ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
 
-                // Mobile state: only show when menu is open
-                menuState &&
-                "flex lg:hidden absolute z-10 top-full left-0 w-full flex-col space-y-4 bg-background border p-6 max-sm:p-2 rounded-2xl shadow-2xl"
-              )}
-            >
-              {/* Mobile Links */}
-              {menuState && (
-                <ul className="space-y-4 text-base lg:hidden">
-                  {menuItems.map((item, index) => (
-                    <li key={index}>
-                      <Link
-                        href={item.href}
-                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                {/* Get Started Button */}
-                <div className="w-full sm:w-auto flex  p-1 transition-all duration-300 hover:scale-105 hover:shadow-lg ">
-                  <Button
-                    asChild
-                    size="sm"
-                    variant="ghost"
-                    className="flex-1 sm:flex-initial h-[42px] rounded-xl px-5 text-sm font-medium border border-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                  >
-                    <Link href="/contact-us">
-                      <span className="text-nowrap">Start a Project</span>
-                    </Link>
-                  </Button>
-                </div>
+              <div className="hidden lg:block">
+                <Button
+                  asChild
+                  size="sm"
+                  className="h-9 rounded-full bg-white text-black hover:bg-white/90 px-5 text-xs font-semibold"
+                >
+                  <Link href="/contact-us">
+                    Start a Project
+                  </Link>
+                </Button>
               </div>
             </div>
+
+            {/* Mobile Menu Dropdown (Outside the relative container flow to avoid width constraints if needed, but here simple is better) */}
+            <div
+              className={cn(
+                "absolute top-full left-0 mt-4 w-full flex-col gap-4 rounded-2xl border border-white/10 bg-black/95 p-6 backdrop-blur-xl shadow-2xl transition-all duration-300 lg:hidden",
+                menuState ? "flex opacity-100 scale-100" : "hidden opacity-0 scale-95"
+              )}
+            >
+              <ul className="flex flex-col gap-4 text-center">
+                {menuItems.map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setMenuState(false)}
+                      className="block text-lg font-medium text-white/80 hover:text-white"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-col gap-3 mt-4">
+                <Button
+                  asChild
+                  className="w-full rounded-full bg-white text-black hover:bg-white/90"
+                >
+                  <Link href="/contact-us">Start a Project</Link>
+                </Button>
+              </div>
+            </div>
+
           </div>
         </div>
       </nav>
