@@ -3,9 +3,12 @@
 import React, { useRef } from "react";
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export default function Pricing() {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const router = useRouter()
 
   return (
     <div
@@ -37,7 +40,7 @@ export default function Pricing() {
 
             {/* CTA Button */}
             <div className="mb-12">
-              <Button className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-base font-semibold rounded">
+              <Button className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-base font-semibold rounded" onClick={() => router.push("/contact-us")}>
                 Start a Project →
               </Button>
               <p className="mt-4 text-sm text-white/60">Our team will reach out within 24 hours.</p>

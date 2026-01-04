@@ -6,8 +6,10 @@ import Link from 'next/link';
 
 
 import { projects as slides } from "./data";
+import { useRouter } from "next/navigation";
 
 const ProjectsPage = () => {
+    const router = useRouter();
     return (
         <div className="relative flex flex-col overflow-hidden ">
             <motion.div
@@ -66,7 +68,7 @@ const ProjectsPage = () => {
                         viewport={{ once: true }}
                     >
                         {slides.map((slide) => (
-                            <div key={slide.id} className="group border border-white/30 relative w-full h-[450px] max-md:h-[300px] overflow-hidden cursor-pointer">
+                            <div key={slide.id} className="group border border-white/30 relative w-full h-[450px] max-md:h-[300px] overflow-hidden cursor-pointer" onClick={() => router.push(`/projects/${slide.id}`)}>
                                 {/* IMAGE */}
                                 <img
                                     src={slide.images[0]}
@@ -79,14 +81,8 @@ const ProjectsPage = () => {
 
                                 {/* CONTENT ON HOVER */}
                                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                                    <h3 className="text-white text-center text-2xl font-semibold">{slide.title}</h3>
+                                    <h3 className="text-white text-center text-2xl font-[500]">{slide.title}</h3>
                                     <p className="text-gray-200 text-center text-sm tracking-wide">{slide.category}</p>
-
-                                    <Link href={`/projects/${slide.id}`}>
-                                        <button className="mt-3 px-5 py-2 bg-white/20 text-white rounded-full backdrop-blur-md border border-white/30 hover:bg-white/30 transition">
-                                            View Case Study
-                                        </button>
-                                    </Link>
                                 </div>
                             </div>
                         ))}

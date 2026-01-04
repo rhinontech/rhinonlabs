@@ -27,7 +27,7 @@ const HomePage = () => {
       <Feature />
       <Testimonials />
       <Testimonials2 />
-      <Pricing />
+      {/* <Pricing /> */}
       <Faq />
     </div>
   );

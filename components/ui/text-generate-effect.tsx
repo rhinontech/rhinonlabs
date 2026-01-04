@@ -7,12 +7,16 @@ export const TextGenerateEffect = ({
   words,
   highlight = [],
   className,
+  highlightClassName = "text-blue-500",
+  textColor = "text-black dark:text-white",
   filter = true,
   duration = 0.5,
 }: {
   words: string;
   highlight?: string[];
   className?: string;
+  highlightClassName?: string;
+  textColor?: string;
   filter?: boolean;
   duration?: number;
 }) => {
@@ -56,7 +60,7 @@ export const TextGenerateEffect = ({
             key={part + idx}
             className={cn(
               "opacity-0",
-              isHighlighted ? "text-blue-500" : "text-black dark:text-white"
+              isHighlighted ? highlightClassName : textColor
             )}
             style={{ filter: filter ? "blur(10px)" : "none" }}
           >

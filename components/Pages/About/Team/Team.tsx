@@ -82,8 +82,6 @@ const Team = () => {
                 </motion.div>
 
             </div>
-
-
         </div>
     )
 

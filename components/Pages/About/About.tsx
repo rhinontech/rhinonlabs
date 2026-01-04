@@ -24,9 +24,8 @@ const About = () => {
             <div className="">
                 <Hero />
                 <AboutUs />
-                <Team />
+                {/* <Team /> */}
                 <Statics />
-
             </div>
 
         </div>

@@ -5,8 +5,10 @@ import { Star } from "lucide-react";
 import Photos from "./PhotosCrauser";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const Hero = () => {
+  const router = useRouter()
   return (
     <div className="overflow-hidden">
       <motion.div
@@ -30,7 +32,7 @@ const Hero = () => {
       <div className="pt-44 max-sm:pt-20 px-5 pb-14 flex flex-col gap-10 max-w-5xl mx-auto">
         <div className="flex flex-col gap-5 items-center">
           <motion.p
-            className="text-center"
+            className="text-center uppercase"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -41,7 +43,7 @@ const Hero = () => {
 
           <div className="flex flex-col gap-0">
             <TextGenerateEffect
-              className="text-center lg:text-7xl md:text-5xl text-4xl font-normal"
+              className="text-center lg:text-7xl md:text-5xl text-4xl font-semibold"
               words={"Your Digital Product, <br /> Re-Engineered for Scale"}
             />
           </div>
@@ -65,7 +67,7 @@ const Hero = () => {
           viewport={{ once: true }}
         >
           <div className="">
-            <Button className="bg-white text-black hover:bg-gray-200 px-4 py-4 md:px-6 md:py-6 text-base font-semibold rounded-none border-3 border-black/30">
+            <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6 text-base font-semibold rounded-none border-3 border-black/30" onClick={() => router.push("/contact-us")}>
               Start a Project
             </Button>
           </div>
@@ -108,16 +110,6 @@ const Hero = () => {
                 Trusted by leading enterprises & fast-growing teams worldwide.
               </span>
             </div>
-            <div className="flex flex-col gap-2">
-              <div className="flex gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 fill-white text-white" />
-                ))}
-              </div>
-              <span className="text-white/70 text-sm">
-                Trusted by leading enterprises & fast-growing teams worldwide.
-              </span>
-            </div>
           </div>
         </motion.div>
       </div>
@@ -140,7 +132,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
           viewport={{ once: true }}
-          className="pb-3"
+          className="pb-3 mask-[linear-gradient(to_bottom,black_50%,transparent_100%)] webkit-mask-[linear-gradient(to_bottom,black_50%,transparent_100%)]"
         >
           <Photos />
         </motion.div>

@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button"
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect"
 import { Star } from "lucide-react"
 import { motion } from "framer-motion"
+import { useRouter } from "next/navigation"
 
 const Hero = () => {
+    const router = useRouter()
     return (
-        <div className=" pt-44 max-md:pt-20 px-5 pb-10 flex flex-col gap-20 max-w-[1200px] mx-auto" >
+        <div className="pt-44 max-md:pt-20 px-5 pb-10 flex flex-col gap-20 max-w-[1200px] mx-auto" >
 
             {/* Header */}
             <div className="flex flex-col gap-10">
@@ -39,7 +41,7 @@ const Hero = () => {
                     viewport={{ once: true }} // 👈 only animate on first view
                 >
                     <div className="">
-                        <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6  text-base font-semibold rounded-none border-3 border-black/30">
+                        <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6  text-base font-semibold rounded-none border-3 border-black/30" onClick={() => router.push("/contact-us")}>
                             Start a Project
                         </Button>
                     </div>
@@ -73,50 +75,86 @@ const Hero = () => {
             </div>
 
             {/* Trusted by */}
-            <div className=" flex h-24 border-t-1">
-                <div className="flex items-center w-28 border-t border-white  mr-10">
-                    <p className="">
+            <div className="flex h-24 border-t-1 border-white/10">
+                <div className="flex items-center w-[120px] max-md:w-full max-md:hidden mr-10">
+                    <p className="text-sm tracking-widest text-white/70">
                         TRUSTED BY
                     </p>
                 </div>
-                <div className="flex items-center justify-center w-full overflow-hidden">
-                    <div className="relative w-full mt-2 overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)] ">
-                        <ul className="flex w-fit gap-[0.5rem] animate-scroll">
-                            <div className="flex gap-10 px-5">
-                                <div className="px-3 py-4 text-xl flex items-center">FinTech</div>
-                                <div className="px-3 py-4 text-xl flex items-center">HealthTech</div>
-                                <div className="px-3 py-4 text-xl flex items-center">Logistics</div>
-                                <div className="px-3 py-4 text-xl flex items-center">SaaS</div>
-                                <div className="px-3 py-4 text-xl flex items-center">Enterprise</div>
-                                <div className="px-3 py-4 text-xl flex items-center">E-Commerce</div>
-                                <div className="px-3 py-4 text-xl flex items-center">Data</div>
-                                <div className="px-3 py-4 text-xl flex items-center">Cloud</div>
-                                <div className="px-3 py-4 text-xl flex items-center">AI</div>
-                                <div className="px-3 py-4 text-xl flex items-center">Cybersec</div>
-                            </div>
-                            <div className="flex gap-10 px-5">
-                                <div className="px-3 py-4 text-xl flex items-center">FinTech</div>
-                                <div className="px-3 py-4 text-xl flex items-center">HealthTech</div>
-                                <div className="px-3 py-4 text-xl flex items-center">Logistics</div>
-                                <div className="px-3 py-4 text-xl flex items-center">SaaS</div>
-                                <div className="px-3 py-4 text-xl flex items-center">Enterprise</div>
-                                <div className="px-3 py-4 text-xl flex items-center">E-Commerce</div>
-                                <div className="px-3 py-4 text-xl flex items-center">Data</div>
-                                <div className="px-3 py-4 text-xl flex items-center">Cloud</div>
-                                <div className="px-3 py-4 text-xl flex items-center">AI</div>
-                                <div className="px-3 py-4 text-xl flex items-center">Cybersec</div>
-                            </div>
-
-
-
-
-
-                        </ul>
+                <div className="flex items-center justify-center w-full overflow-hidden mask-image-gradient">
+                    <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
+                        <div className="flex w-fit animate-scroll gap-16 pr-16">
+                            {[...Array(2)].map((_, setIndex) => (
+                                <div key={setIndex} className="flex gap-16 items-center shrink-0">
+                                    {[
+                                        {
+                                            type: "image",
+                                            src: "https://rhinon.tech/_next/image?url=%2Fassets%2Frhinonlogo.png&w=256&q=75",
+                                            alt: "Rhinon Tech"
+                                        },
+                                        {
+                                            type: "image",
+                                            src: "https://richharbor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FRH-Logo.dfcfd1c1.png&w=3840&q=75",
+                                            alt: "Rich Harbor"
+                                        },
+                                        {
+                                            type: "text",
+                                            text: "Al Rooha Pvt",
+                                            className: "text-xl font-bold tracking-widest uppercase"
+                                        },
+                                        {
+                                            type: "text",
+                                            text: "6hz",
+                                            className: "text-xl font-bold tracking-widest uppercase"
+                                        },
+                                        {
+                                            type: "image",
+                                            src: "https://rhinon.tech/_next/image?url=%2Fassets%2Frhinonlogo.png&w=256&q=75",
+                                            alt: "Rhinon Tech"
+                                        },
+                                        {
+                                            type: "image",
+                                            src: "https://richharbor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FRH-Logo.dfcfd1c1.png&w=3840&q=75",
+                                            alt: "Rich Harbor"
+                                        },
+                                        {
+                                            type: "text",
+                                            text: "Al Rooha Pvt",
+                                            className: "text-xl font-bold tracking-widest uppercase"
+                                        },
+                                        {
+                                            type: "text",
+                                            text: "6hz",
+                                            className: "text-xl font-bold tracking-widest uppercase"
+                                        },
+                                    ].map((company, i) => (
+                                        <div key={i} className="flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity cursor-default">
+                                            {company.type === "image" ? (
+                                                <img
+                                                    src={company.src}
+                                                    alt={company.alt}
+                                                    className="h-8 w-auto object-contain"
+                                                />
+                                            ) : (
+                                                <div className={`whitespace-nowrap text-white ${company.className}`}>
+                                                    {company.text}
+                                                </div>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
-
-
+            <TextGenerateEffect
+                className="text-3xl font-medium text-center leading-relaxed text-white/50"
+                words={"At Rhinon Web, we're passionate about designing intelligent digital ecosystems that leave a lasting impression. Our mission is to transform your complex workflows into seamless reality with a blend of AI-driven innovation, engineering expertise, and attention to detail. We believe the key to exceptional results lies in deep partnership."}
+                highlight={["Rhinon", "Web", "intelligent", "digital", "ecosystems", "that", "leave", "a", "lasting", "impression", "AIdriven", "innovation", "engineering", "expertise", "and", "attention", "to", "detail", "deep", "partnership"]}
+                highlightClassName="text-white"
+                textColor=""
+            />
         </div>
     )
 }

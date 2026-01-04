@@ -2,8 +2,11 @@
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import { motion } from 'framer-motion'
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const AboutUs = () => {
+    const router = useRouter()
     return (
         <div className="flex items-center flex-col py-20 px-5 gap-20">
             {/* Header */}
@@ -18,7 +21,7 @@ const AboutUs = () => {
                 </div>
                 <div className="flex items-center max-md:gap-5 max-md:flex-col justify-center gap-10">
                     <div className="">
-                        <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6 text-base font-semibold rounded-none border-3 border-black/30">
+                        <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6  text-base font-semibold rounded-none border-3 border-black/30" onClick={() => router.push("/contact-us")}>
                             Start a Project
                         </Button>
                     </div>
@@ -51,19 +54,15 @@ const AboutUs = () => {
                 </div>
             </div>
             <motion.div
-                className=" relative flex h-[85vh] w-[80vw] max-md:h-[60vh]  items-center justify-center"
+                className=" relative flex h-[75vh] w-[80vw] max-md:h-[70vh]  items-center justify-center"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", }}
                 viewport={{ once: true, amount: 0.4 }} // 👈 only animate on first view
             >
                 <div className="absolute inset-0 -z-10">
-
-                    <img src="https://i.pinimg.com/1200x/a3/51/30/a35130edc8113b0b747ed58f84fa3f8c.jpg" className="w-full h-full opacity-50 object-cover" alt="" />
-
+                    <img src="/assets/about/architecture_wide.png" className="w-full h-full opacity-50 object-cover" alt="Rhinon Web Architecture" />
                 </div>
-
-                <h2 className="font-bold text-xl">Rhinon Web</h2>
 
             </motion.div>
 

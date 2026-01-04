@@ -38,7 +38,7 @@ export default function Process() {
     <div className="px-10 max-sm:px-3 py-20 flex max-w-4xl mx-auto flex-col w-full">
       {/* header */}
       <div className="flex flex-col space-y-5 w-full px-5">
-        <p>A Seamless Path</p>
+        <p className="uppercase">A Seamless Path</p>
         <h2 className="lg:text-7xl md:text-5xl sm:text-4xl text-4xl">
           From Idea to <br /> Implementation
         </h2>
@@ -50,7 +50,7 @@ export default function Process() {
       </div>
       {/* steps */}
 
-      <div className="flex flex-col gap-5  mt-20">
+      <div className="flex flex-col gap-5 mt-20">
         <div className="flex ">
           {/* Beam div */}
           <div className="flex flex-col gap-3 justify-center items-center">
@@ -74,7 +74,7 @@ export default function Process() {
                   </div>
                 </div>
               </div>
-              <div className="h-[350px] border-2 w-full bg-[url('/assets/path/1.png')] bg-cover bg-center"></div>
+              <div className="h-[450px] border-2 w-full bg-[url('/assets/path/discovery_strategy.png')] bg-cover bg-center"></div>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function Process() {
                   </div>
                 </div>
               </div>
-              <div className="h-[400px] w-full rounded-2xl border border-white/10 bg-[url('/images/design_architecture.png')] bg-cover bg-center shadow-2xl overflow-hidden transition-all duration-700"></div>
+              <div className="h-[450px] border-2 w-full bg-[url('/assets/path/design_architecture.png')] bg-cover bg-center"></div>
             </div>
           </div>
         </div>
@@ -120,7 +120,7 @@ export default function Process() {
             <ScrollBeam />
           </div>
           {/* content */}
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             <div className="flex flex-col gap-8">
               <div className="flex justify-between items-start">
                 <div className="flex flex-col flex-1 space-y-3">
@@ -136,7 +136,30 @@ export default function Process() {
                   </div>
                 </div>
               </div>
-              <div className="h-[400px] w-full rounded-2xl border border-white/10 bg-[url('/images/build_delivery.png')] bg-cover bg-center shadow-2xl overflow-hidden transition-all duration-700"></div>
+              <div className="h-[450px] w-full shadow-2xl overflow-hidden bg-[url('https://framerusercontent.com/images/VeiBx4I8kxeohO3NysSUJ3HNiN8.jpg?scale-down-to=2048')] flex items-center">
+                <div className="flex w-fit animate-scroll-slow gap-4 px-4">
+                  {[...Array(4)].map((_, setIndex) => (
+                    <div key={setIndex} className="flex gap-4 shrink-0">
+                      {[
+                        { src: "/assets/path/build_code.png", label: "Build" },
+                        { src: "/assets/path/integration_cloud.png", label: "Integrate" },
+                        { src: "/assets/path/delivery_mobile.png", label: "Deliver" },
+                      ].map((item, i) => (
+                        <div key={i} className="relative w-[300px] h-[350px] overflow-hidden border border-white/10 group">
+                          <img
+                            src={item.src}
+                            alt={item.label}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                            <p className="text-white font-medium">{item.label}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

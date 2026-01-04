@@ -1,9 +1,11 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { div } from "framer-motion/client";
 import type { LucideIcon } from "lucide-react";
 import { Facebook, Linkedin, Star, Twitter } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 
@@ -31,6 +33,7 @@ const socialLinks: SocialLink[] = [
 ]
 
 const Footer = () => {
+    const router = useRouter()
     return (
         <div className="[mask-image:linear-gradient(to_bottom,transparent_0%,white_30%,white_100%)]
                 mask-mode:luminance">
@@ -45,8 +48,8 @@ const Footer = () => {
                         <TextGenerateEffect className="lg:text-7xl md:text-6xl text-4xl" words={"Still Exploring Options? <br /> Let’s Talk About Your Project."} />
                         <div className="flex  mt-5 max-md:flex-col  gap-5 md:gap-10">
                             <div className="">
-                                <Button asChild className="bg-white text-black hover:bg-gray-200 md:px-6 md:py-6 px-4 py-4 text-base font-semibold rounded-none border-3 border-black/30">
-                                    <Link href="/contact-us">Start a Project</Link>
+                                <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6  text-base font-semibold rounded-none border-3 border-black/30" onClick={() => router.push("/contact-us")}>
+                                    Start a Project
                                 </Button>
                             </div>
 

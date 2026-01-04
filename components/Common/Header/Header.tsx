@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const menuItems = [
   { name: "Home", href: "/" },
@@ -16,6 +17,8 @@ const menuItems = [
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
+
+  const router = useRouter()
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -31,14 +34,11 @@ export const HeroHeader = () => {
           Interpreting "shadow from top" as a drop shadow on the navbar + consistent fixed positioning. */}
       <nav
         data-state={menuState && "active"}
-        className="fixed top-0 inset-x-0 z-50 flex justify-center pt-4 px-4 transition-all duration-300"
+        className="fixed top-0 inset-x-0 z-50 flex justify-center px-4 transition-all duration-300 bg-gradient-to-b from-black/50 to-transparent"
       >
         <div
           className={cn(
-            "w-full max-w-5xl rounded-full border border-white/10 bg-black/60 backdrop-blur-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] transition-all duration-300",
-            // Add a subtle top highlight/shadow effect if that's what was meant, typically usually a white/10 border handles this.
-            // "shadow from top" might also mean this:
-            "shadow-[0_1px_0_0_rgba(255,255,255,0.1)_inset]" // Top inner highlight
+            "w-full max-w-5xl px-2 py-2",
           )}
         >
           <div className="relative flex items-center justify-between gap-6 px-6 py-3">
@@ -52,9 +52,9 @@ export const HeroHeader = () => {
                 <Image
                   src="/assets/Logo_Rhinon_Web_Full.png"
                   alt="Rhinon Tech Logo"
-                  width={100}
-                  height={100}
-                  className="object-contain h-8 w-auto"
+                  width={110}
+                  height={110}
+                  className="object-contain h-9 w-auto"
                 />
               </Link>
             </div>
@@ -91,14 +91,8 @@ export const HeroHeader = () => {
               </button>
 
               <div className="hidden lg:block">
-                <Button
-                  asChild
-                  size="sm"
-                  className="h-9 rounded-full bg-white text-black hover:bg-white/90 px-5 text-xs font-semibold"
-                >
-                  <Link href="/contact-us">
-                    Start a Project
-                  </Link>
+                <Button className="hover:bg-white bg-transparent rounded-none text-white hover:text-black p-5 backdrop-blur-xl bg-white/4 border-[1px] border-white/30" onClick={() => router.push("/contact-us")}>
+                  Schedule a call
                 </Button>
               </div>
             </div>
@@ -124,11 +118,8 @@ export const HeroHeader = () => {
                 ))}
               </ul>
               <div className="flex flex-col gap-3 mt-4">
-                <Button
-                  asChild
-                  className="w-full rounded-full bg-white text-black hover:bg-white/90"
-                >
-                  <Link href="/contact-us">Start a Project</Link>
+                <Button onClick={() => router.push("/contact-us")} className="hover:bg-white bg-transparent rounded-none text-white hover:text-black p-5 backdrop-blur-xl bg-white/4 border-[1px] border-white/30">
+                  Schedule a call
                 </Button>
               </div>
             </div>

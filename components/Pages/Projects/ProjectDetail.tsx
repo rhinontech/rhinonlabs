@@ -35,7 +35,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                     <img src="https://framerusercontent.com/images/VeiBx4I8kxeohO3NysSUJ3HNiN8.jpg?scale-down-to=2048" className="w-full h-full object-cover" alt="" />
                 </div>
             </motion.div>
-            <div className="max-w-[1400px] mx-auto px-5 md:px-10">
+            <div className="max-w-[1440px] mx-auto px-5 md:px-10">
                 <div className="flex flex-col lg:flex-row gap-6">
 
                     {/* Left Column - Scrollable Images */}
@@ -86,15 +86,15 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
 
                             <div className="grid grid-cols-2 gap-6">
                                 <div>
-                                    <p className="text-xs text-white/50 uppercase tracking-wider mb-1">Date</p>
+                                    <p className="text-xs text-white/50 uppercase tracking-wider">Date</p>
                                     <p className="font-medium">{project.date}</p>
                                 </div>
                                 <div>
-                                    <p className="text-xs text-white/50 uppercase tracking-wider mb-1">Industry</p>
+                                    <p className="text-xs text-white/50 uppercase tracking-wider">Industry</p>
                                     <p className="font-medium">{project.industry}</p>
                                 </div>
                                 <div>
-                                    <p className="text-xs text-white/50 uppercase tracking-wider mb-1">Timeline</p>
+                                    <p className="text-xs text-white/50 uppercase tracking-wider">Timeline</p>
                                     <p className="font-medium">{project.timeline}</p>
                                 </div>
                             </div>
@@ -120,12 +120,12 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                             position: "sticky",
                             top: "150px",
                         }}
-                        className="h-fit flex items-center justify-center font-semibold pt-20 w-[45%]"
+                        className="h-fit flex items-center justify-center font-semibold pt-20 w-[50%]"
                     >
                         <section className="px-8">
                             <div className="">
                                 {/* Label */}
-                                <div className="mb-6">
+                                <div className="mb-3">
                                     <span className="text-sm font-semibold tracking-widest text-white/80">
                                         {project.category}
                                     </span>
@@ -144,9 +144,11 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                                 <div className='flex items-center gap-5'>
 
                                     {/* CTA Button */}
-                                    <div>
-                                        <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6 text-base font-semibold">
-                                            Get Started
+                                    <div className="">
+                                        <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6  text-base font-semibold rounded-none border-3 border-black/30">
+                                            <Link href="/contact-us">
+                                                Start a Project
+                                            </Link>
                                         </Button>
                                     </div>
 
@@ -168,57 +170,62 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                                                     className="w-full h-full rounded-full object-cover"
                                                 />
                                             </div>
-                                            <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
+                                            {/* <div className="w-12 h-12 rounded-full bg-gray-600 border-2 border-black flex items-center justify-center">
                                                 <img
                                                     src="https://randomuser.me/api/portraits/women/3.jpg"
                                                     alt="User 3"
                                                     className="w-full h-full rounded-full object-cover"
                                                 />
-                                            </div>
+                                            </div> */}
                                         </div>
 
                                         {/* Rating & Trust Text */}
-                                        <div className="flex flex-col gap-2">
+                                        <div className="flex flex-col">
                                             <div className="flex gap-1">
                                                 {[...Array(5)].map((_, i) => (
                                                     <Star key={i} className="w-3 h-3 fill-white text-white" />
                                                 ))}
                                             </div>
-                                            <span className="text-white/70 text-sm">
-                                                Trusted by 36+ businesses
+                                            <span className="text-white/80 text-sm font-light mt-1">
+                                                Trusted by leading enterprises & fast-growing teams worldwide.
                                             </span>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="w-full h-px bg-white/10 my-2"></div>
+                                {/* <div className="w-full h-px bg-white/10 my-2"></div> */}
 
-                                <div className="grid grid-cols-2 gap-6">
-                                    <div>
-                                        <p className="text-xs text-white/50 uppercase tracking-wider mb-1">Date</p>
-                                        <p className="font-medium">{project.date}</p>
+                                <div className="flex flex-col gap-2 mt-10">
+                                    <div className='flex items-center justify-between'>
+                                        <p className="font-medium uppercase tracking-wider">Date</p>
+                                        <p className="font-medium text-white/50 tracking-wider">{project.date}</p>
                                     </div>
-                                    <div>
-                                        <p className="text-xs text-white/50 uppercase tracking-wider mb-1">Industry</p>
-                                        <p className="font-medium">{project.industry}</p>
-                                    </div>
-                                    <div>
-                                        <p className="text-xs text-white/50 uppercase tracking-wider mb-1">Timeline</p>
-                                        <p className="font-medium">{project.timeline}</p>
-                                    </div>
-                                </div>
 
-                                <div className="pt-4">
-                                    <Link href={project.liveLink} className="flex items-center gap-2 text-white hover:text-white/80 transition-colors group">
-                                        <span className="font-medium">Visit Live Site</span>
-                                        <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                                    </Link>
-                                </div>
+                                    <div className="w-full h-px bg-white/10 my-2"></div>
+                                    <div className='flex items-center justify-between'>
+                                        <p className="font-medium uppercase tracking-wider">Industry</p>
+                                        <p className="font-medium text-white/50 tracking-wider">{project.industry}</p>
+                                    </div>
 
-                                <div className="pt-6">
-                                    <Button className="w-full py-6 text-lg bg-white text-black hover:bg-gray-200 rounded-none">
-                                        Start a Project Like This
-                                    </Button>
+                                    <div className="w-full h-px bg-white/10 my-2"></div>
+                                    <div className='flex items-center justify-between'>
+                                        <p className="font-medium uppercase tracking-wider">Status</p>
+                                        <div className="flex items-center gap-2">
+                                            <p className="font-medium text-white/50 tracking-wider">Live</p>
+                                        </div>
+                                    </div>
+                                    <div className="w-full h-px bg-white/10 my-2"></div>
+                                    <div className='flex items-center justify-between'>
+                                        <div className='flex items-center gap-2'>
+                                            <span className="relative flex h-2 w-2">
+                                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+                                                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                            </span>
+                                            <p className="font-medium uppercase tracking-wider">Live Projects</p>
+                                        </div>
+                                        <p className="flex items-center gap-2 font-medium text-white/50 tracking-wider hover:text-white transition-colors cursor-pointer" onClick={() => window.open(project.liveLink, "_blank")}>Visit Site <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" /></p>
+                                    </div>
+                                    <div className="w-full h-px bg-white/10 my-2"></div>
                                 </div>
 
                             </div>
