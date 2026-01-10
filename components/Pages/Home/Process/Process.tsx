@@ -140,7 +140,7 @@ export default function Process() {
               <div className="h-[450px] w-full shadow-2xl overflow-hidden relative flex items-center rounded-lg">
                 {/* Background for step 3 */}
                 <Image
-                  src="https://framerusercontent.com/images/VeiBx4I8kxeohO3NysSUJ3HNiN8.jpg?scale-down-to=2048"
+                  src="/images/background/background_projects.png"
                   alt="Build Background"
                   fill
                   className="object-cover"

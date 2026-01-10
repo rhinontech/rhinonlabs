@@ -23,7 +23,7 @@ const Hero = () => {
                 mask-mode:luminance relative w-full h-full"
         >
           <Image
-            src="https://framerusercontent.com/images/oEeFUDDyOcLHiBBci1NNXPxqE.jpg?scale-down-to=2048"
+            src="/images/background/background.png"
             fill
             className="object-cover"
             alt="Hero Background"

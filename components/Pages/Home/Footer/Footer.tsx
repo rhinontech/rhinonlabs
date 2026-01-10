@@ -37,7 +37,7 @@ const Footer = () => {
     return (
         <div className="[mask-image:linear-gradient(to_bottom,transparent_0%,white_30%,white_100%)]
                 mask-mode:luminance">
-            <div className="bg-[url('https://framerusercontent.com/images/OtnmdtGgpJnjSFqMANBQ2epErk.jpg?scale-down-to=2048')] bg-cover bg-center">
+            <div className="bg-[url('/images/background/background_footer.png')] bg-cover bg-center">
 
                 <div className=" max-w-6xl flex flex-col gap-16 pt-40 mx-auto pb-16 px-5">
 

@@ -78,7 +78,7 @@ const ContactUs = () => {
                         mask-mode:luminance"
                 >
                     <img
-                        src="https://framerusercontent.com/images/VeiBx4I8kxeohO3NysSUJ3HNiN8.jpg?scale-down-to=2048"
+                        src="/images/background/background_projects.png"
                         className="w-full h-full object-cover"
                         alt=""
                     />

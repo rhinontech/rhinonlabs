@@ -32,7 +32,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
             >
                 <div className="[mask-image:linear-gradient(to_bottom,transparent,white_30%,white_60%,transparent)]
                         mask-mode:luminance">
-                    <img src="https://framerusercontent.com/images/VeiBx4I8kxeohO3NysSUJ3HNiN8.jpg?scale-down-to=2048" className="w-full h-full object-cover" alt="" />
+                    <img src="/images/background/background_projects.png" className="w-full h-full object-cover" alt="" />
                 </div>
             </motion.div>
             <div className="max-w-[1440px] mx-auto px-5 md:px-10">
