@@ -42,7 +42,7 @@ const Hero = () => {
                 >
                     <div className="">
                         <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6  text-base font-semibold rounded-none border-3 border-black/30" onClick={() => router.push("/contact-us")}>
-                            Start a Project
+                            Book a 20-min Discovery Call
                         </Button>
                     </div>
 

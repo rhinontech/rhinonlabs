@@ -17,12 +17,12 @@ const AboutUs = () => {
                     <div className="flex w-fit text-center">
                         <h2 className="lg:text-7xl md:text-5xl text-3xl">Our Philosophy</h2>
                     </div>
-                    <p className="text-center max-w-2xl text-lg text-white/80">We believe that enterprise software shouldn't feel like enterprise software. It should be intuitive, fast, and beautiful. We bring consumer-grade UX to complex business systems.</p>
+                    <p className="text-center max-w-2xl text-lg text-white/80">We're a founder-led team specializing in internal systems for scaling enterprises. We work directly with product, ops, and engineering leaders to fix systems that slow teams down.</p>
                 </div>
                 <div className="flex items-center max-md:gap-5 max-md:flex-col justify-center gap-10">
                     <div className="">
                         <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6  text-base font-semibold rounded-none border-3 border-black/30" onClick={() => router.push("/contact-us")}>
-                            Start a Project
+                            Book a 20-min Discovery Call
                         </Button>
                     </div>
 

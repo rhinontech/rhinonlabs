@@ -23,7 +23,7 @@ const Hero = () => {
                 mask-mode:luminance relative w-full h-full"
         >
           <Image
-            src="/images/background/background.png"
+            src="/images/background/background.jpg"
             fill
             className="object-cover"
             alt="Hero Background"
@@ -41,13 +41,13 @@ const Hero = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Your Design Agency Template
+            Enterprise Internal Systems
           </motion.p>
 
           <div className="flex flex-col gap-0 w-full">
             <TextGenerateEffect
               className="text-center lg:text-7xl md:text-5xl text-4xl font-semibold leading-tight"
-              words={"Your Digital Product, <br /> Re-Engineered for Scale"}
+              words={"Fix Broken Internal Tools <br /> & Dashboards — Built for Scale"}
             />
           </div>
           <motion.p
@@ -57,10 +57,7 @@ const Hero = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Rhinon Web builds powerful, enterprise-grade dashboards, web apps,
-            internal tools, and mission-critical digital platforms. No
-            subscriptions. No generic templates. Just tailored solutions
-            designed to fit the way your business works.
+            Custom dashboards, admin panels, and internal tools for scaling teams — without bloated agencies or generic software.
           </motion.p>
         </div>
         <motion.div
@@ -75,7 +72,7 @@ const Hero = () => {
               className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-lg font-semibold rounded-none border-3 border-black/30 transition-all"
               onClick={() => router.push("/contact-us")}
             >
-              Start a Project
+              Book a 20-min Discovery Call
             </Button>
           </div>
 

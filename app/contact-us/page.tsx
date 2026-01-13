@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Contact Us",
-    description: "Get in touch with Rhinon Web to start your next digital project.",
+    description: "Request a discovery call to discuss your internal tools and operational challenges. 24-hour response time.",
 };
 
 export default function page() {

@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "About Us",
-    description: "Learn more about Rhinon Web, our team, and our mission to deliver enterprise-grade digital solutions.",
+    description: "Founder-led team specializing in internal systems for scaling enterprises. We work directly with decision-makers to fix systems that slow teams down.",
 };
 
 export default function page() {

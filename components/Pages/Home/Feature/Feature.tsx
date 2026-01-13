@@ -35,13 +35,11 @@ const Feature = () => {
     <div className="py-10 max-w-6xl max-md:px-3 mx-auto flex flex-col space-y-5">
       <div className="flex max-md:gap-5 max-md:flex-col justify-between gap-16">
         <h2 className="md:text-6xl text-4xl">
-          Enterprise Design, <br /> Simplified.
+          Internal Tools That <br /> Actually Work at Scale
         </h2>
         <div className="flex md:justify-end md:items-end">
           <p className="max-w-md md:ml-5">
-            You get the quality of a world-class product team without the
-            overhead. We partner closely with your engineering, operations, and
-            leadership teams to deliver:
+            Scaling teams often struggle with broken dashboards, manual workflows, and admin tools that don't scale. We fix these pain points by building:
           </p>
         </div>
       </div>

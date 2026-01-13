@@ -37,7 +37,7 @@ const Footer = () => {
     return (
         <div className="[mask-image:linear-gradient(to_bottom,transparent_0%,white_30%,white_100%)]
                 mask-mode:luminance">
-            <div className="bg-[url('/images/background/background_footer.png')] bg-cover bg-center">
+            <div className="bg-[url('/images/background/background_footer.jpg')] bg-cover bg-center">
 
                 <div className=" max-w-6xl flex flex-col gap-16 pt-40 mx-auto pb-16 px-5">
 
@@ -49,7 +49,7 @@ const Footer = () => {
                         <div className="flex  mt-5 max-md:flex-col  gap-5 md:gap-10">
                             <div className="">
                                 <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6  text-base font-semibold rounded-none border-3 border-black/30" onClick={() => router.push("/contact-us")}>
-                                    Start a Project
+                                    Book a 20-min Discovery Call
                                 </Button>
                             </div>
 
@@ -94,7 +94,9 @@ const Footer = () => {
                     {/* Social Links */}
                     <div className="flex w-fit flex-col gap-5">
                         <h2 className="text-2xl font-semibold">Rhinon Web</h2>
-                        <p className="text-white/80">Enterprise dashboard & product design studio.</p>
+                        <p className="text-white/80">Internal Systems & Dashboards for Enterprises</p>
+                        <p className="text-white/70 text-sm max-w-md">Founder-led delivery. We work directly with decision-makers from discovery to deployment.</p>
+                        {/* TODO: Add founder name and direct email - pending user input */}
                         <div className="flex gap-5">
                             {socialLinks.map((sl, index) => (
                                 <div key={index} className="h-10 w-10 border-2 hover:bg-amber-600 transition-color duration-300 rounded-full flex items-center justify-center">

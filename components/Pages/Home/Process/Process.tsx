@@ -49,10 +49,9 @@ export default function Process() {
             <div className="flex flex-col gap-5">
               <div className="flex">
                 <div className="flex flex-col flex-1 space-y-2">
-                  <h2 className="text-2xl">Discovery & Strategy</h2>
+                  <h2 className="text-2xl">Diagnose</h2>
                   <p>
-                    We begin by understanding your workflows, data structures,
-                    users, and product goals. Expect clarity, not confusion.
+                    We begin with stakeholder interviews, workflow mapping, and risk & scalability assessment. Understanding your operations comes first.
                   </p>
                 </div>
                 <div className="hidden sm:block">
@@ -87,10 +86,9 @@ export default function Process() {
             <div className="flex flex-col gap-5">
               <div className="flex">
                 <div className="flex flex-col flex-1 space-y-2">
-                  <h2 className="text-2xl">Design & Architecture</h2>
+                  <h2 className="text-2xl">Design</h2>
                   <p>
-                    From UX flows to full dashboard systems, every screen is
-                    crafted for usability, scalability, and precision.
+                    From UX flows to full dashboard architecture — designed for scalability, permission models, and integration requirements.
                   </p>
                 </div>
                 <div className="hidden sm:block">
@@ -125,10 +123,9 @@ export default function Process() {
             <div className="flex flex-col gap-8">
               <div className="flex justify-between items-start">
                 <div className="flex flex-col flex-1 space-y-3">
-                  <h2 className="text-3xl font-semibold">Build, Integrate & Deliver</h2>
+                  <h2 className="text-3xl font-semibold">Deploy</h2>
                   <p className="text-muted-foreground text-lg">
-                    We turn designs into smooth, high-performance products—built
-                    to grow with your business.
+                    We turn designs into production-ready systems with testing protocols, rollout planning, and team training — built to grow with your business.
                   </p>
                 </div>
                 <div className="hidden sm:block">
@@ -140,7 +137,7 @@ export default function Process() {
               <div className="h-[450px] w-full shadow-2xl overflow-hidden relative flex items-center rounded-lg">
                 {/* Background for step 3 */}
                 <Image
-                  src="/images/background/background_projects.png"
+                  src="/images/background/q3lzdr4u88731.jpg"
                   alt="Build Background"
                   fill
                   className="object-cover"

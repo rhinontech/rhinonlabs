@@ -21,7 +21,7 @@ const ProjectsPage = () => {
             >
                 <div className="[mask-image:linear-gradient(to_bottom,transparent,white_30%,white_60%,transparent)]
                 mask-mode:luminance">
-                    <img src="/images/background/background_projects.png" className="w-full h-full object-cover" alt="" />
+                    <img src="/images/background/q3lzdr4u88731.jpg" className="w-full h-full object-cover" alt="" />
                 </div>
             </motion.div>
             <div>
@@ -88,6 +88,36 @@ const ProjectsPage = () => {
                         ))}
 
 
+                    </motion.div>
+
+                    {/* Similar Problems We Solve Section */}
+                    <motion.div
+                        className="mt-20 max-w-4xl mx-auto"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="flex flex-col gap-8">
+                            <div className="flex flex-col gap-3 text-center">
+                                <p className="uppercase text-sm md:text-base text-white/70">Enterprise Challenges</p>
+                                <h2 className="text-3xl md:text-5xl font-semibold">Similar Problems We Solve</h2>
+                            </div>
+                            <div className="grid md:grid-cols-2 gap-4">
+                                {[
+                                    "Legacy dashboards that slow decision-making",
+                                    "Manual ops workflows creating bottlenecks",
+                                    "Admin tools that don't scale with teams",
+                                    "Disconnected systems across ops & product",
+                                    "Internal tools built by engineers, not designers",
+                                    "Dashboards that can't handle complex permissions"
+                                ].map((problem, index) => (
+                                    <div key={index} className="p-5 border border-white/10 bg-white/5 backdrop-blur-sm rounded-lg hover:border-white/20 transition-all">
+                                        <p className="text-white/90">{problem}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </motion.div>
 
                 </div>

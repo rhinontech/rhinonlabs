@@ -78,7 +78,7 @@ const ContactUs = () => {
                         mask-mode:luminance"
                 >
                     <img
-                        src="/images/background/background_projects.png"
+                        src="/images/background/q3lzdr4u88731.jpg"
                         className="w-full h-full object-cover"
                         alt=""
                     />
@@ -100,7 +100,7 @@ const ContactUs = () => {
                         <div className="flex flex-col gap-0">
                             <TextGenerateEffect
                                 className="lg:text-7xl md:text-5xl text-4xl"
-                                words={"Start a Project"}
+                                words={"Request a Discovery Call"}
                             />
                         </div>
                         <motion.p
@@ -110,7 +110,7 @@ const ContactUs = () => {
                             transition={{ duration: 0.6, ease: "easeOut" }}
                             viewport={{ once: true }} // 👈 only animate on first view
                         >
-                            Ready to build something scalable? Let's talk.
+                            Tell us briefly about your internal tools or operational challenges. We'll respond within 24 hours.
                         </motion.p>
                     </div>
                     <motion.div

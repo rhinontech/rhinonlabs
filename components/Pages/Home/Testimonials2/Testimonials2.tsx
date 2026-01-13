@@ -39,8 +39,8 @@ const Testimonials2 = () => {
 
             <div className="flex flex-col justify-center items-center gap-10">
                 <div className="flex flex-col gap-3">
-                    <p className="text-center w-full uppercase text-sm md:text-base">Our Core Expertise</p>
-                    <h2 className="text-center w-full text-3xl sm:text-5xl md:text-7xl">What We Work On</h2>
+                    <p className="text-center w-full uppercase text-sm md:text-base">What Enterprises Struggle With</p>
+                    <h2 className="text-center w-full text-3xl sm:text-5xl md:text-7xl">Problems We Solve</h2>
                 </div>
                 <div className="flex flex-wrap justify-center gap-2 max-w-3xl">
                     {services.map((service, index) => (
@@ -102,10 +102,10 @@ const Testimonials2 = () => {
                 viewport={{ once: true }}
             >
                 <Button
-                    onClick={() => router.push("/projects")}
+                    onClick={() => router.push("/contact-us")}
                     className="bg-white z-50 text-black hover:bg-gray-200 px-4 py-4 md:px-6 md:py-6 text-base font-semibold rounded-none border-3 border-black/30"
                 >
-                    See our work
+                    Book a 20-min Discovery Call
                 </Button>
 
                 {/* Social Proof */}

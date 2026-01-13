@@ -17,19 +17,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://rhinonweb.com"),
   title: {
-    default: "Rhinon Web | Premium Design & Development Agency",
+    default: "Rhinon Web | Internal Systems & Dashboards for Enterprises",
     template: "%s | Rhinon Web",
   },
   description:
-    "Rhinon Web builds powerful, enterprise-grade dashboards, web apps, and digital platforms. Tailored solutions, no templates.",
+    "Fix broken internal tools and dashboards. We build custom admin panels, internal systems, and operational tools for scaling enterprises — without bloated agencies or generic software.",
   keywords: [
-    "Web Design Agency",
-    "Web Development",
-    "Next.js Development",
-    "UI/UX Design",
-    "Enterprise Web Apps",
-    "Digital Product Design",
-    "Dashboard Design",
+    "Internal Tools Development",
+    "Enterprise Dashboards",
+    "Admin Panel Design",
+    "Internal Systems",
+    "Custom Dashboard Development",
+    "Operations Tools",
+    "Enterprise Web Applications",
+    "Workflow Automation",
   ],
   authors: [{ name: "Rhinon Tech" }],
   creator: "Rhinon Tech",
@@ -37,9 +38,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://rhinonweb.com",
-    title: "Rhinon Web | Premium Design & Development Agency",
+    title: "Rhinon Web | Internal Systems & Dashboards for Enterprises",
     description:
-      "Rhinon Web builds powerful, enterprise-grade dashboards, web apps, and digital platforms. Tailored solutions, no templates.",
+      "Fix broken internal tools and dashboards. We build custom admin panels, internal systems, and operational tools for scaling enterprises.",
     siteName: "Rhinon Web",
     images: [
       {
@@ -52,9 +53,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rhinon Web | Premium Design & Development Agency",
+    title: "Rhinon Web | Internal Systems & Dashboards for Enterprises",
     description:
-      "Rhinon Web builds powerful, enterprise-grade dashboards, web apps, and digital platforms. Tailored solutions, no templates.",
+      "Fix broken internal tools and dashboards. We build custom admin panels, internal systems, and operational tools for scaling enterprises.",
     images: ["/og-image.jpg"],
   },
   robots: {

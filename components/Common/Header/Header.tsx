@@ -41,39 +41,44 @@ export const HeroHeader = () => {
             "w-full max-w-5xl px-2 py-2",
           )}
         >
-          <div className="relative flex items-center justify-between gap-6 px-6 py-3">
+          <div className="relative flex items-center justify-between gap-6 md:px-6 py-3">
             {/* Logo + Mobile Menu Button */}
-            <div className="flex shrink-0 items-center">
-              <Link
-                href="/"
-                aria-label="home"
-                className="flex items-center space-x-2"
-              >
-                <Image
-                  src="/assets/Logo_Rhinon_Web_Full.png"
-                  alt="Rhinon Tech Logo"
-                  width={110}
-                  height={110}
-                  className="object-contain h-9 w-auto"
-                />
-              </Link>
+
+            <div className="flex items-center gap-10">
+              <div className="flex shrink-0 items-center">
+                <Link
+                  href="/"
+                  aria-label="home"
+                  className="flex items-center space-x-2"
+                >
+                  <Image
+                    src="/assets/Logo_Rhinon_Web_Full.png"
+                    alt="Rhinon Tech Logo"
+                    width={110}
+                    height={110}
+                    className="object-contain h-9 w-auto"
+                  />
+                </Link>
+              </div>
+
+              {/* Desktop Menu - Centered using absolute positioning trick or just flex-1 justify-center */}
+              <div className="hidden md:flex">
+                <ul className="flex gap-8 text-sm font-medium text-white/80">
+                  {menuItems.map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        href={item.href}
+                        className="hover:text-white hover:scale-105 transition-all duration-200"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
             </div>
 
-            {/* Desktop Menu - Centered using absolute positioning trick or just flex-1 justify-center */}
-            <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              <ul className="flex gap-8 text-sm font-medium text-white/80">
-                {menuItems.map((item, index) => (
-                  <li key={index}>
-                    <Link
-                      href={item.href}
-                      className="hover:text-white hover:scale-105 transition-all duration-200"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
             {/* Buttons + Mobile Menu Toggle */}
             <div className="flex items-center gap-4">
@@ -92,7 +97,7 @@ export const HeroHeader = () => {
 
               <div className="hidden lg:block">
                 <Button className="hover:bg-white bg-transparent rounded-none text-white hover:text-black p-5 backdrop-blur-xl bg-white/4 border-[1px] border-white/30" onClick={() => router.push("/contact-us")}>
-                  Schedule a call
+                  Book a 20-min Discovery Call
                 </Button>
               </div>
             </div>
@@ -104,7 +109,7 @@ export const HeroHeader = () => {
                 menuState ? "flex opacity-100 scale-100" : "hidden opacity-0 scale-95"
               )}
             >
-              <ul className="flex flex-col gap-4 text-center">
+              <ul className="flex flex-col gap-4 text-left">
                 {menuItems.map((item, index) => (
                   <li key={index}>
                     <Link
@@ -119,7 +124,7 @@ export const HeroHeader = () => {
               </ul>
               <div className="flex flex-col gap-3 mt-4">
                 <Button onClick={() => router.push("/contact-us")} className="hover:bg-white bg-transparent rounded-none text-white hover:text-black p-5 backdrop-blur-xl bg-white/4 border-[1px] border-white/30">
-                  Schedule a call
+                  Book a 20-min Discovery Call
                 </Button>
               </div>
             </div>
