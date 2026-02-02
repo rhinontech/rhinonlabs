@@ -102,6 +102,33 @@ const Hero = () => {
             </div>
           </div>
         </motion.div>
+
+        {/* Direct Contact Option */}
+        <motion.div
+          className="text-center text-white/80"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          <p className="text-sm">
+            Prefer to talk directly?{" "}
+            <a
+              href="tel:+918249291789"
+              className="font-semibold text-white hover:underline transition-all"
+            >
+              Call us: +91 8249 291 789
+            </a>
+            {" "}or{" "}
+            <a
+              href="https://wa.me/918249291789"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-white hover:underline transition-all"
+            >
+              WhatsApp
+            </a>
+          </p>
+        </motion.div>
       </div>
 
       <div className="flex flex-col gap-5 mt-10">
@@ -110,18 +137,19 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-          viewport={{ once: true }} // 👈 only animate on first view
+          viewport={{ once: true }}
         >
           <span>2024 – 2025 Case Study Showcase</span>
           <span>Live Sessions • Dedicated Teams • Enterprise Delivery</span>
         </motion.div>
 
+        {/* Photo carousel - visible on desktop (md+), hidden on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
           viewport={{ once: true }}
-          className="pb-3 mask-[linear-gradient(to_bottom,black_50%,transparent_100%)] webkit-mask-[linear-gradient(to_bottom,black_50%,transparent_100%)]"
+          className="pb-3 hidden md:block mask-[linear-gradient(to_bottom,black_50%,transparent_100%)] webkit-mask-[linear-gradient(to_bottom,black_50%,transparent_100%)]"
         >
           <Photos />
         </motion.div>

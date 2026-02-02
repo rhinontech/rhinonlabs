@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { HeroHeader } from "@/components/Common/Header/Header";
 import Footer from "@/components/Pages/Home/Footer/Footer";
+import FloatingContactButton from "@/components/Common/FloatingContactButton/FloatingContactButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,6 +85,7 @@ export default function RootLayout({
         <HeroHeader />
         {children}
         <Footer />
+        <FloatingContactButton />
       </body>
     </html>
   );

@@ -9,6 +9,8 @@ import Faq from "./Faq/Faq";
 import Hero from "./Hero/Hero";
 import { motion } from "framer-motion";
 import Testimonials2 from "./Testimonials2/Testimonials2";
+import ProblemsWeSolve from "./ProblemsWeSolve/ProblemsWeSolve";
+import AuditOffer from "./AuditOffer/AuditOffer";
 
 const HomePage = () => {
   return (
@@ -24,7 +26,9 @@ const HomePage = () => {
       </motion.div>
       <Hero />
       <Process />
+      <ProblemsWeSolve />
       <Feature />
+      <AuditOffer />
       <Testimonials />
       <Testimonials2 />
       {/* <Pricing /> */}

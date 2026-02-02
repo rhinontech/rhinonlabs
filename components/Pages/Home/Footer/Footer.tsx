@@ -96,8 +96,34 @@ const Footer = () => {
                         <h2 className="text-2xl font-semibold">Rhinon Web</h2>
                         <p className="text-white/80">Internal Systems & Dashboards for Enterprises</p>
                         <p className="text-white/70 text-sm max-w-md">Founder-led delivery. We work directly with decision-makers from discovery to deployment.</p>
-                        {/* TODO: Add founder name and direct email - pending user input */}
-                        <div className="flex gap-5">
+
+                        {/* Contact Information */}
+                        <div className="flex flex-col gap-3 pt-2">
+                            <div className="flex flex-col gap-1">
+                                <p className="text-white/60 text-xs uppercase tracking-wide">Direct Contact</p>
+                                <a href="tel:+918249291789" className="text-xl font-bold hover:text-white/80 transition-colors">
+                                    +91 8249 291 789
+                                </a>
+                            </div>
+                            <div className="flex gap-3">
+                                <a
+                                    href="tel:+918249291789"
+                                    className="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-sm font-medium transition-all"
+                                >
+                                    Call Now
+                                </a>
+                                <a
+                                    href="https://wa.me/918249291789"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-4 py-2 bg-green-500 hover:bg-green-600 border border-green-600 rounded-lg text-sm font-medium transition-all"
+                                >
+                                    WhatsApp
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="flex gap-5 pt-2">
                             {socialLinks.map((sl, index) => (
                                 <div key={index} className="h-10 w-10 border-2 hover:bg-amber-600 transition-color duration-300 rounded-full flex items-center justify-center">
                                     <sl.icon fill="white" className="h-4 w-4" />

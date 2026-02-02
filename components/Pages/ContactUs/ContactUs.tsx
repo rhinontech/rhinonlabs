@@ -112,6 +112,33 @@ const ContactUs = () => {
                         >
                             Tell us briefly about your internal tools or operational challenges. We'll respond within 24 hours.
                         </motion.p>
+
+                        {/* Direct Contact Options */}
+                        <motion.div
+                            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4 p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-lg max-w-xl mx-auto"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                            viewport={{ once: true }}
+                        >
+                            <p className="text-white/90 font-medium">Prefer to talk directly?</p>
+                            <div className="flex gap-3">
+                                <a
+                                    href="tel:+918249291789"
+                                    className="px-4 py-2 bg-white text-black hover:bg-gray-200 rounded-lg text-sm font-semibold transition-all"
+                                >
+                                    📞 Call: +91 8249 291 789
+                                </a>
+                                <a
+                                    href="https://wa.me/918249291789"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-4 py-2 bg-green-500 hover:bg-green-600 rounded-lg text-sm font-semibold transition-all"
+                                >
+                                    💬 WhatsApp
+                                </a>
+                            </div>
+                        </motion.div>
                     </div>
                     <motion.div
                         className="w-[700px] max-md:w-full p-5 bg-white/1 backdrop-blur-md border border-white/10 shadow-xl"

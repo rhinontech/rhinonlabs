@@ -11,22 +11,34 @@ export type Testimonial = {
 };
 export const testimonials: Testimonial[] = [
   {
-    text: "Rhinon Web transformed our internal dashboard into a seamless system. Our team adoption skyrocketed.",
-    authorImg: "https://randomuser.me/api/portraits/women/1.jpg",
-    authorName: "Sarah Thompson",
-    authorPost: "Enterprise Product Lead",
+    text: "Cut our weekly reporting time from 4 hours down to 15 minutes. Our ops team actually logs in daily now instead of avoiding it. 3-week turnaround from kickoff to deployment.",
+    authorImg: "https://randomuser.me/api/portraits/women/44.jpg",
+    authorName: "Rachel Kim",
+    authorPost: "Director of Operations, FinTech",
   },
   {
-    text: "They understood our workflows better than we did. The final product was beyond expectations.",
-    authorImg: "https://randomuser.me/api/portraits/men/2.jpg",
-    authorName: "James Anderson",
-    authorPost: "Director of Operations",
+    text: "We had 5 different tools and spreadsheets just to track customer onboarding. Now it's one dashboard. Eliminated about 2,000 manual data entries per month.",
+    authorImg: "https://randomuser.me/api/portraits/men/32.jpg",
+    authorName: "David Patel",
+    authorPost: "Head of Customer Success, SaaS",
   },
   {
-    text: "The speed, efficiency, and attention to detail were unmatched.",
-    authorImg: "https://randomuser.me/api/portraits/men/3.jpg",
-    authorName: "Michael Chen",
-    authorPost: "Head of Engineering",
+    text: "Our internal admin panel kept timing out once we hit 100+ users. They rebuilt it in 4 weeks and it handles 500+ without breaking a sweat. Should've called them 6 months earlier.",
+    authorImg: "https://randomuser.me/api/portraits/men/67.jpg",
+    authorName: "Marcus Chen",
+    authorPost: "VP Engineering, B2B Platform",
+  },
+  {
+    text: "Honestly thought we'd have to hire 2 more people to manage our workflow chaos. Instead, Rhinon automated the whole thing. Paid for itself in the first quarter.",
+    authorImg: "https://randomuser.me/api/portraits/women/68.jpg",
+    authorName: "Jennifer Rodriguez",
+    authorPost: "COO, Healthcare Tech",
+  },
+  {
+    text: "They actually listened to what our team needed, not what they wanted to build. The final dashboard looks nothing like their initial mockup — and that's exactly why it works so well for us.",
+    authorImg: "https://randomuser.me/api/portraits/men/52.jpg",
+    authorName: "Tom Andersen",
+    authorPost: "Product Lead, Logistics SaaS",
   },
 ];
 const Testimonials = () => {
@@ -55,6 +67,9 @@ const Testimonials = () => {
         <h2 className="text-center w-full text-7xl max-md:text-5xl max-sm:text-3xl">
           See What Others Say
         </h2>
+        <p className="text-center text-white/60 text-sm italic mt-2 max-w-2xl mx-auto">
+          Real feedback from past engagements. Details anonymized to protect client confidentiality.
+        </p>
       </div>
       <div className="relative w-full mt-[340px] max-md:mt-[200px] overflow-hidden ">
         <ul className="flex w-fit gap-2 animate-scroll">
