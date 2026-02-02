@@ -57,3 +57,56 @@ export async function GET(request: Request) {
         );
     }
 }
+
+export async function DELETE(request: Request) {
+    try {
+        // Verify authentication
+        const cookieStore = await cookies();
+        const token = cookieStore.get('admin_token')?.value;
+
+        if (!token) {
+            return NextResponse.json(
+                { success: false, message: 'Unauthorized' },
+                { status: 401 }
+            );
+        }
+
+        try {
+            await jwtVerify(token, secret);
+        } catch (e) {
+            return NextResponse.json(
+                { success: false, message: 'Invalid token' },
+                { status: 401 }
+            );
+        }
+
+        await dbConnect();
+
+        const { searchParams } = new URL(request.url);
+        const id = searchParams.get('id');
+
+        if (!id) {
+            return NextResponse.json(
+                { success: false, message: 'Lead ID is required' },
+                { status: 400 }
+            );
+        }
+
+        const deletedLead = await Lead.findByIdAndDelete(id);
+
+        if (!deletedLead) {
+            return NextResponse.json(
+                { success: false, message: 'Lead not found' },
+                { status: 404 }
+            );
+        }
+
+        return NextResponse.json({ success: true, message: 'Lead deleted successfully' });
+    } catch (error) {
+        console.error('Error deleting lead:', error);
+        return NextResponse.json(
+            { success: false, message: 'Failed to delete lead' },
+            { status: 500 }
+        );
+    }
+}

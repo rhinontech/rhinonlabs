@@ -12,6 +12,7 @@ const ContactUs = () => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
+        whatsapp: "",
         company: "",
         projectType: "",
         message: "",
@@ -39,6 +40,7 @@ const ContactUs = () => {
                 body: JSON.stringify({
                     name: formData.name,
                     email: formData.email,
+                    whatsapp: formData.whatsapp,
                     company: formData.company,
                     service: formData.projectType,
                     message: formData.message,
@@ -50,6 +52,7 @@ const ContactUs = () => {
                 setFormData({
                     name: "",
                     email: "",
+                    whatsapp: "",
                     company: "",
                     projectType: "",
                     message: "",
@@ -192,6 +195,18 @@ const ContactUs = () => {
 
                                 <div className="grid grid-cols-2 max-md:grid-cols-1 gap-3">
                                     <div className="flex flex-col gap-3">
+                                        <Label>WHATSAPP NUMBER</Label>
+                                        <Input
+                                            name="whatsapp"
+                                            type="tel"
+                                            value={formData.whatsapp}
+                                            onChange={handleChange}
+                                            className="px-3 py-6 rounded-none border border-white/10 bg-white/5 backdrop-blur-lg"
+                                            placeholder="+91 9876543210"
+                                        />
+                                    </div>
+
+                                    <div className="flex flex-col gap-3">
                                         <Label>COMPANY</Label>
                                         <Input
                                             name="company"
@@ -201,16 +216,17 @@ const ContactUs = () => {
                                             placeholder="Company Name"
                                         />
                                     </div>
-                                    <div className="flex flex-col gap-3">
-                                        <Label>PROJECT TYPE</Label>
-                                        <Input
-                                            name="projectType"
-                                            value={formData.projectType}
-                                            onChange={handleChange}
-                                            className="px-3 py-6 rounded-none border border-white/10 bg-white/5 backdrop-blur-lg  "
-                                            placeholder="Dashboard, SaaS, Internal Tool..."
-                                        />
-                                    </div>
+                                </div>
+
+                                <div className="flex flex-col gap-3">
+                                    <Label>PROJECT TYPE</Label>
+                                    <Input
+                                        name="projectType"
+                                        value={formData.projectType}
+                                        onChange={handleChange}
+                                        className="px-3 py-6 rounded-none border border-white/10 bg-white/5 backdrop-blur-lg w-full"
+                                        placeholder="Dashboard, SaaS, Internal Tool..."
+                                    />
                                 </div>
 
                                 <div className="flex flex-col gap-3">

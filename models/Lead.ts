@@ -3,7 +3,7 @@ import mongoose, { Schema, Model, Document } from 'mongoose';
 export interface ILead extends Document {
     name: string;
     email: string;
-    phone?: string;
+    whatsapp?: string;
     message: string;
     service?: string;
     company?: string;
@@ -19,7 +19,7 @@ const LeadSchema: Schema<ILead> = new Schema({
         type: String,
         required: [true, 'Please provide an email'],
     },
-    phone: {
+    whatsapp: {
         type: String,
     },
     message: {
