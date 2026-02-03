@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Rhinon Web | Home",
-  description: "Fix broken internal tools & dashboards. Custom admin panels and internal systems for scaling enterprises.",
+  description: "Ship your product 3x faster without hiring a tech team. We help founders and SMBs build MVPs, websites, and AI products with affordable pricing.",
 };
 
 const page = () => {

@@ -1,176 +1,91 @@
 "use client";
-import { useRef } from "react";
-import ScrollBeam from "./ScrollBeam";
-import { useScroll, useTransform, motion } from "framer-motion";
-import Image from "next/image";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { MessageSquare, PenTool, Code, Rocket } from "lucide-react";
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Initial consultation",
+    description: "We start every project with a quick discovery call to understand your product goals and user needs.",
+    icon: MessageSquare,
+  },
+  {
+    number: "02",
+    title: "Strategy & Wireframing",
+    description: "We translate your roadmap into a strategic blueprint, developing high-level wireframes that define core functionality and user flow.",
+    icon: PenTool,
+  },
+  {
+    number: "03",
+    title: "Code",
+    description: "Our experienced developers build clean, scalable solutions in your desired tech stack with fast implementation using industry-standard AI tools.",
+    icon: Code,
+  },
+  {
+    number: "04",
+    title: "Deliver",
+    description: "We ensure rigorous testing and a smooth launch before handing over a fully optimized product ready for your users.",
+    icon: Rocket,
+  },
+];
 
 export default function Process() {
-  const ref1 = useRef<HTMLDivElement>(null);
-  const ref2 = useRef<HTMLDivElement>(null);
-
-  const bg1 = useTransform(
-    useScroll({ target: ref1, offset: ["start center", "end center"] })
-      .scrollYProgress,
-    [0, 1],
-    ["#0f172a", "#ffffff"]
-  );
-  const bg2 = useTransform(
-    useScroll({ target: ref2, offset: ["start center", "end center"] })
-      .scrollYProgress,
-    [0, 1],
-    ["#0f172a", "#ffffff"]
-  );
-
   return (
-    <div className="px-10 max-sm:px-3 py-20 flex max-w-4xl mx-auto flex-col w-full">
-      {/* header */}
-      <div className="flex flex-col space-y-5 w-full px-5">
-        <p className="uppercase">A Seamless Path</p>
-        <h2 className="lg:text-7xl md:text-5xl sm:text-4xl text-4xl">
-          From Idea to <br /> Implementation
-        </h2>
-        <p>
-          Design and development for complex systems doesn’t have to be chaotic.
-          We follow a clear, structured approach from the very first call to
-          final delivery.
-        </p>
-      </div>
-      {/* steps */}
+    <section id="process" className="relative py-20 px-5">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl md:text-5xl font-semibold mb-4">
+            Our 4 step process
+          </h2>
+          <p className="text-lg md:text-xl text-white/70 mb-8">
+            We keep it lean and focused to your needs
+          </p>
+          <Button
+            className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-lg font-semibold rounded-none border-3 border-black/30 transition-all"
+            onClick={() => window.open('https://calendly.com/rhinonweb', '_blank')}
+          >
+            Book a Call
+          </Button>
+        </motion.div>
 
-      <div className="flex flex-col gap-5 mt-20">
-        <div className="flex ">
-          {/* Beam div */}
-          <div className="flex flex-col gap-3 justify-center items-center">
-            <div className="h-4 w-4 rounded-full bg-white"></div>
-            <ScrollBeam />
-          </div>
-          {/* content */}
-          <div className="py-5 pl-5 flex-1">
-            <div className="flex flex-col gap-5">
-              <div className="flex">
-                <div className="flex flex-col flex-1 space-y-2">
-                  <h2 className="text-2xl">Diagnose</h2>
-                  <p>
-                    We begin with stakeholder interviews, workflow mapping, and risk & scalability assessment. Understanding your operations comes first.
-                  </p>
-                </div>
-                <div className="hidden sm:block">
-                  <div className="w-fit border border-white/10 px-4 py-1.5 rounded-full bg-white/5 text-sm backdrop-blur-sm text-muted-foreground">
-                    Step 1
-                  </div>
-                </div>
-              </div>
-              <div className="h-[450px] border-2 w-full relative overflow-hidden rounded-lg">
-                <Image
-                  src="/assets/path/discovery_strategy.png"
-                  alt="Discovery & Strategy"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex ">
-          {/* Beam div */}
-          <div className="flex flex-col gap-3 justify-center items-center">
+        {/* Process Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
+          {processSteps.map((step, index) => (
             <motion.div
-              ref={ref1}
-              className={`h-4 w-4 rounded-full `}
-              style={{ backgroundColor: bg1 }}
-            ></motion.div>
-            <ScrollBeam />
-          </div>
-          {/* content */}
-          <div className="py-5 pl-5 flex-1">
-            <div className="flex flex-col gap-5">
-              <div className="flex">
-                <div className="flex flex-col flex-1 space-y-2">
-                  <h2 className="text-2xl">Design</h2>
-                  <p>
-                    From UX flows to full dashboard architecture — designed for scalability, permission models, and integration requirements.
-                  </p>
+              key={index}
+              className="relative p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-300 backdrop-blur-sm"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              {/* Icon and Number */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center">
+                  <step.icon className="w-7 h-7 text-white" />
                 </div>
-                <div className="hidden sm:block">
-                  <div className="w-fit border border-white/10 px-4 py-1.5 rounded-full bg-white/5 text-sm backdrop-blur-sm text-muted-foreground">
-                    Step 2
-                  </div>
-                </div>
+                <span className="text-5xl font-bold text-white/20">{step.number}</span>
               </div>
-              <div className="h-[450px] border-2 w-full relative overflow-hidden rounded-lg">
-                <Image
-                  src="/assets/path/design_architecture.png"
-                  alt="Design & Architecture"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="flex gap-8">
-          {/* Beam div */}
-          <div className="flex flex-col gap-3 justify-start items-center pt-2">
-            <motion.div
-              ref={ref2}
-              className={`h-4 w-4 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.5)]`}
-              style={{ backgroundColor: bg2 }}
-            ></motion.div>
-            <ScrollBeam />
-          </div>
-          {/* content */}
-          <div className="flex-1 min-w-0">
-            <div className="flex flex-col gap-8">
-              <div className="flex justify-between items-start">
-                <div className="flex flex-col flex-1 space-y-3">
-                  <h2 className="text-3xl font-semibold">Deploy</h2>
-                  <p className="text-muted-foreground text-lg">
-                    We turn designs into production-ready systems with testing protocols, rollout planning, and team training — built to grow with your business.
-                  </p>
-                </div>
-                <div className="hidden sm:block">
-                  <div className="w-fit border border-white/10 px-4 py-1.5 rounded-full bg-white/5 text-sm backdrop-blur-sm text-muted-foreground">
-                    Step 3
-                  </div>
-                </div>
-              </div>
-              <div className="h-[450px] w-full shadow-2xl overflow-hidden relative flex items-center rounded-lg">
-                {/* Background for step 3 */}
-                <Image
-                  src="/images/background/q3lzdr4u88731.jpg"
-                  alt="Build Background"
-                  fill
-                  className="object-cover"
-                />
 
-                <div className="flex w-fit animate-scroll-slow gap-4 px-4 z-10">
-                  {[...Array(4)].map((_, setIndex) => (
-                    <div key={setIndex} className="flex gap-4 shrink-0">
-                      {[
-                        { src: "/assets/path/build_code.png", label: "Build" },
-                        { src: "/assets/path/integration_cloud.png", label: "Integrate" },
-                        { src: "/assets/path/delivery_mobile.png", label: "Deliver" },
-                      ].map((item, i) => (
-                        <div key={i} className="relative w-[300px] h-[350px] overflow-hidden border border-white/10 group rounded-md">
-                          <Image
-                            src={item.src}
-                            alt={item.label}
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                            <p className="text-white font-medium">{item.label}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+              {/* Content */}
+              <h3 className="text-2xl font-semibold mb-3">
+                {step.title}
+              </h3>
+              <p className="text-white/70 leading-relaxed">
+                {step.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

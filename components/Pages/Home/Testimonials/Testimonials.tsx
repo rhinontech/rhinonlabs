@@ -43,7 +43,7 @@ export const testimonials: Testimonial[] = [
 ];
 const Testimonials = () => {
   return (
-    <div className="py-20 relative flex flex-col items-center justify-center">
+    <section id="testimonials" className="py-20 relative flex flex-col items-center justify-center">
       <motion.div
         className="absolute inset-0 px-40 py-20 max-md:px-0 max-md:py-0 max-md:top-44 -z-10"
         initial={{ opacity: 0 }}
@@ -65,10 +65,10 @@ const Testimonials = () => {
       <div className="flex flex-col gap-3">
         <p className="text-center w-full">Testimonials</p>
         <h2 className="text-center w-full text-7xl max-md:text-5xl max-sm:text-3xl">
-          See What Others Say
+          See what our clients are saying
         </h2>
         <p className="text-center text-white/60 text-sm italic mt-2 max-w-2xl mx-auto">
-          Real feedback from past engagements. Details anonymized to protect client confidentiality.
+          Real feedback from our clients who've built with us
         </p>
       </div>
       <div className="relative w-full mt-[340px] max-md:mt-[200px] overflow-hidden ">
@@ -109,7 +109,7 @@ const Testimonials = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

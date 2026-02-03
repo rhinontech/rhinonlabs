@@ -18,20 +18,22 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://rhinonweb.com"),
   title: {
-    default: "Rhinon Web | Internal Systems & Dashboards for Enterprises",
+    default: "Rhinon Web | Ship Your Product 3x Faster Without Hiring a Tech Team",
     template: "%s | Rhinon Web",
   },
   description:
-    "Fix broken internal tools and dashboards. We build custom admin panels, internal systems, and operational tools for scaling enterprises — without bloated agencies or generic software.",
+    "We help founders and SMBs design, build and launch websites, apps and AI products and internal tools fast with affordable pricing. AI-powered development for startups.",
   keywords: [
-    "Internal Tools Development",
-    "Enterprise Dashboards",
-    "Admin Panel Design",
-    "Internal Systems",
-    "Custom Dashboard Development",
-    "Operations Tools",
-    "Enterprise Web Applications",
-    "Workflow Automation",
+    "MVP Development",
+    "AI SaaS Development",
+    "Startup Web Development",
+    "Mobile App Development",
+    "Landing Page Design",
+    "Internal Tools",
+    "AI Development",
+    "Rapid Prototyping",
+    "Founder-Friendly Development",
+    "SMB Software Development",
   ],
   authors: [{ name: "Rhinon Tech" }],
   creator: "Rhinon Tech",
@@ -39,24 +41,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://rhinonweb.com",
-    title: "Rhinon Web | Internal Systems & Dashboards for Enterprises",
+    title: "Rhinon Web | Ship Your Product 3x Faster",
     description:
-      "Fix broken internal tools and dashboards. We build custom admin panels, internal systems, and operational tools for scaling enterprises.",
+      "We help founders and SMBs design, build and launch websites, apps and AI products fast. AI-powered development with affordable pricing.",
     siteName: "Rhinon Web",
     images: [
       {
-        url: "/og-image.jpg", // Make sure to add an og-image.jpg to public folder later if needed, or use a remote URL
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Rhinon Web",
+        alt: "Rhinon Web - AI-powered development for startups",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rhinon Web | Internal Systems & Dashboards for Enterprises",
+    title: "Rhinon Web | Ship Your Product 3x Faster",
     description:
-      "Fix broken internal tools and dashboards. We build custom admin panels, internal systems, and operational tools for scaling enterprises.",
+      "We help founders and SMBs design, build and launch websites, apps and AI products fast. AI-powered development with affordable pricing.",
     images: ["/og-image.jpg"],
   },
   robots: {

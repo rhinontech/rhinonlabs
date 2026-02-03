@@ -19,17 +19,16 @@ export type SocialLink = {
 };
 
 const navLinks = [
-    { title: "Home", href: "/" },
-    { title: "Case Studies", href: "/projects" },
-    { title: "About", href: "/about" },
-    { title: "Contact", href: "/contact-us" },
+    { title: "Home", href: "#hero" },
+    { title: "Services", href: "#services" },
+    { title: "Process", href: "#process" },
+    { title: "Projects", href: "#projects" },
+    { title: "FAQs", href: "#faqs" },
 ];
 
 const socialLinks: SocialLink[] = [
-    { icon: Twitter, href: "#" },
-    { icon: Facebook, href: "#" },
-    { icon: Linkedin, href: "#" },
-
+    { icon: Twitter, href: "https://twitter.com/rhinonweb" },
+    { icon: Linkedin, href: "https://linkedin.com/company/rhinonweb" },
 ]
 
 const Footer = () => {
@@ -45,11 +44,12 @@ const Footer = () => {
                     <div className="flex flex-col gap-5">
                         <p>Get started</p>
 
-                        <TextGenerateEffect className="lg:text-7xl md:text-6xl text-4xl" words={"Still Exploring Options? <br /> Let’s Talk About Your Project."} />
+                        <TextGenerateEffect className="lg:text-7xl md:text-6xl text-4xl" words={"Ready to build fast with us?"} />
+                        <p className="text-xl text-white/80 max-w-2xl">Join the other founders who trusted us to bring their ideas to life.</p>
                         <div className="flex  mt-5 max-md:flex-col  gap-5 md:gap-10">
                             <div className="">
-                                <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6  text-base font-semibold rounded-none border-3 border-black/30" onClick={() => router.push("/contact-us")}>
-                                    Book a 20-min Discovery Call
+                                <Button className="bg-white text-black hover:bg-gray-200 px-6 py-6  text-base font-semibold rounded-none border-3 border-black/30" onClick={() => window.open('https://calendly.com/rhinonweb', '_blank')}>
+                                    Book a free discovery Call
                                 </Button>
                             </div>
 
@@ -75,7 +75,7 @@ const Footer = () => {
                                             <Star key={i} className="w-3 h-3 fill-white text-white" />
                                         ))}
                                     </div>
-                                    <span className="text-white/70 text-sm">Trusted by modern organizations worldwide.</span>
+                                    <span className="text-white/70 text-sm">Trusted by 20+ startups worldwide.</span>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +86,15 @@ const Footer = () => {
                         <h2 className="text-2xl font-semibold">Links</h2>
                         <div className="flex gap-5">
                             {navLinks.map((link, index) => (
-                                <Link key={index} href={link.href} className="text-white/70">{link.title}</Link>
+                                <a key={index} href={link.href} className="text-white/70 hover:text-white transition-colors" onClick={(e) => {
+                                    if (link.href.startsWith('#')) {
+                                        e.preventDefault();
+                                        const element = document.querySelector(link.href);
+                                        if (element) {
+                                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                        }
+                                    }
+                                }}>{link.title}</a>
                             ))}
                         </div>
                     </div>
@@ -94,8 +102,8 @@ const Footer = () => {
                     {/* Social Links */}
                     <div className="flex w-fit flex-col gap-5">
                         <h2 className="text-2xl font-semibold">Rhinon Web</h2>
-                        <p className="text-white/80">Internal Systems & Dashboards for Enterprises</p>
-                        <p className="text-white/70 text-sm max-w-md">Founder-led delivery. We work directly with decision-makers from discovery to deployment.</p>
+                        <p className="text-white/80 uppercase text-sm tracking-wide">AI Lead Development</p>
+                        <p className="text-white/70 text-sm max-w-md">We help founders and SMBs ship products 3x faster with AI-powered development.</p>
 
                         {/* Contact Information */}
                         <div className="flex flex-col gap-3 pt-2">

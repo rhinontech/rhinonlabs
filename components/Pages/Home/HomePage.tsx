@@ -1,16 +1,15 @@
 'use client'
-import svgImages from "@/components/Constants/svgImages";
-import Image from "next/image";
-import Process from "./Process/Process";
-import Feature from "./Feature/Feature";
-import Testimonials from "./Testimonials/Testimonials";
-import Pricing from "./Pricing/Pricing";
-import Faq from "./Faq/Faq";
-import Hero from "./Hero/Hero";
 import { motion } from "framer-motion";
-import Testimonials2 from "./Testimonials2/Testimonials2";
-import ProblemsWeSolve from "./ProblemsWeSolve/ProblemsWeSolve";
-import AuditOffer from "./AuditOffer/AuditOffer";
+import Hero from "./Hero/Hero";
+import Process from "./Process/Process";
+import Faq from "./Faq/Faq";
+import TrustSection from "./TrustSection/TrustSection";
+import ServicesSection from "./ServicesSection/ServicesSection";
+import ValueProposition from "./ValueProposition/ValueProposition";
+import ICPSection from "./ICPSection/ICPSection";
+import ProjectsSection from "./ProjectsSection/ProjectsSection";
+import Testimonials from "./Testimonials/Testimonials";
+import svgImages from "@/components/Constants/svgImages";
 
 const HomePage = () => {
   return (
@@ -25,13 +24,13 @@ const HomePage = () => {
         <svgImages.starBgImage />
       </motion.div>
       <Hero />
+      <TrustSection />
+      <ServicesSection />
+      <ValueProposition />
       <Process />
-      <ProblemsWeSolve />
-      <Feature />
-      <AuditOffer />
+      <ICPSection />
+      <ProjectsSection />
       <Testimonials />
-      <Testimonials2 />
-      {/* <Pricing /> */}
       <Faq />
     </div>
   );

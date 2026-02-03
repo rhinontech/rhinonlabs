@@ -8,10 +8,11 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const menuItems = [
-  { name: "Home", href: "/" },
-  { name: "Case Studies", href: "/projects" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact-us" },
+  { name: "Home", href: "#hero" },
+  { name: "Services", href: "#services" },
+  { name: "Process", href: "#process" },
+  { name: "Projects", href: "#projects" },
+  { name: "FAQs", href: "#faqs" },
 ];
 
 export const HeroHeader = () => {
@@ -27,6 +28,17 @@ export const HeroHeader = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setMenuState(false);
+      }
+    }
+  };
 
   return (
     <header>
@@ -68,6 +80,7 @@ export const HeroHeader = () => {
                     <li key={index}>
                       <Link
                         href={item.href}
+                        onClick={(e) => handleNavClick(e, item.href)}
                         className="hover:text-white hover:scale-105 transition-all duration-200"
                       >
                         {item.name}
@@ -96,8 +109,8 @@ export const HeroHeader = () => {
               </button>
 
               <div className="hidden lg:block">
-                <Button className="hover:bg-white bg-transparent rounded-none text-white hover:text-black p-5 backdrop-blur-xl bg-white/4 border-[1px] border-white/30" onClick={() => router.push("/contact-us")}>
-                  Book a 20-min Discovery Call
+                <Button className="hover:bg-white bg-transparent rounded-none text-white hover:text-black p-5 backdrop-blur-xl bg-white/4 border-[1px] border-white/30" onClick={() => window.open('https://calendly.com/rhinonweb', '_blank')}>
+                  Book a Free Discovery Call
                 </Button>
               </div>
             </div>
@@ -114,7 +127,7 @@ export const HeroHeader = () => {
                   <li key={index}>
                     <Link
                       href={item.href}
-                      onClick={() => setMenuState(false)}
+                      onClick={(e) => handleNavClick(e, item.href)}
                       className="block text-lg font-medium text-white/80 hover:text-white"
                     >
                       {item.name}
@@ -123,8 +136,8 @@ export const HeroHeader = () => {
                 ))}
               </ul>
               <div className="flex flex-col gap-3 mt-4">
-                <Button onClick={() => router.push("/contact-us")} className="hover:bg-white bg-transparent rounded-none text-white hover:text-black p-5 backdrop-blur-xl bg-white/4 border-[1px] border-white/30">
-                  Book a 20-min Discovery Call
+                <Button onClick={() => window.open('https://calendly.com/rhinonweb', '_blank')} className="hover:bg-white bg-transparent rounded-none text-white hover:text-black p-5 backdrop-blur-xl bg-white/4 border-[1px] border-white/30">
+                  Book a Free Discovery Call
                 </Button>
               </div>
             </div>

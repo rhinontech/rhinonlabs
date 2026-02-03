@@ -10,7 +10,7 @@ import Image from "next/image";
 const Hero = () => {
   const router = useRouter();
   return (
-    <div className="overflow-hidden relative min-h-screen flex flex-col justify-center">
+    <div id="hero" className="overflow-hidden relative min-h-screen flex flex-col justify-center">
       <motion.div
         className="absolute inset-0 top-64 max-sm:top-52 -z-10"
         initial={{ opacity: 0 }}
@@ -41,13 +41,13 @@ const Hero = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Enterprise Internal Systems
+            AI Lead Development
           </motion.p>
 
           <div className="flex flex-col gap-0 w-full">
             <TextGenerateEffect
               className="text-center lg:text-7xl md:text-5xl text-4xl font-semibold leading-tight"
-              words={"Fix Broken Internal Tools <br /> & Dashboards — Built for Scale"}
+              words={"Ship your product 3x faster <br /> without hiring a tech team"}
             />
           </div>
           <motion.p
@@ -57,7 +57,7 @@ const Hero = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Custom dashboards, admin panels, and internal tools for scaling teams — without bloated agencies or generic software.
+            We help founders and SMBs design, build and launch websites, apps and AI products and internal tools fast and with affordable pricing.
           </motion.p>
         </div>
         <motion.div
@@ -70,9 +70,9 @@ const Hero = () => {
           <div className="z-20">
             <Button
               className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-lg font-semibold rounded-none border-3 border-black/30 transition-all"
-              onClick={() => router.push("/contact-us")}
+              onClick={() => window.open('https://calendly.com/rhinonweb', '_blank')}
             >
-              Book a 20-min Discovery Call
+              Book a Free Discovery Call
             </Button>
           </div>
 
@@ -98,7 +98,7 @@ const Hero = () => {
                   <Star key={i} className="w-3 h-3 fill-white text-white" />
                 ))}
               </div>
-              <span className="text-white/70 text-sm">Trusted by modern organizations worldwide.</span>
+              <span className="text-white/70 text-sm">Trusted by 20+ startups and SMBs worldwide.</span>
             </div>
           </div>
         </motion.div>
@@ -139,8 +139,8 @@ const Hero = () => {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <span>2024 – 2025 Case Study Showcase</span>
-          <span>Live Sessions • Dedicated Teams • Enterprise Delivery</span>
+          <span>2024 – 2025 Client Showcase</span>
+          <span>Fast Delivery • Affordable Pricing • AI-Powered Development</span>
         </motion.div>
 
         {/* Photo carousel - visible on desktop (md+), hidden on mobile */}
