@@ -133,13 +133,12 @@ const Hero = () => {
 
       <div className="flex flex-col gap-5 mt-10">
         <motion.div
-          className="flex flex-col md:flex-row justify-between px-5 gap-5 md:gap-10 max-w-4xl mx-auto text-sm md:text-base text-center md:text-left text-white/70"
+          className="flex flex-col md:flex-row justify-center px-5 gap-5 md:gap-10 max-w-4xl mx-auto text-sm md:text-base text-center text-white/70"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <span>2024 – 2025 Client Showcase</span>
           <span>Fast Delivery • Affordable Pricing • AI-Powered Development</span>
         </motion.div>
 
