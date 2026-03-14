@@ -1,37 +1,30 @@
 'use client'
 import { motion } from "framer-motion";
-import Hero from "./Hero/Hero";
-import Process from "./Process/Process";
-import Faq from "./Faq/Faq";
-import TrustSection from "./TrustSection/TrustSection";
-import ServicesSection from "./ServicesSection/ServicesSection";
-import ValueProposition from "./ValueProposition/ValueProposition";
-import ICPSection from "./ICPSection/ICPSection";
-import ProjectsSection from "./ProjectsSection/ProjectsSection";
-import Testimonials from "./Testimonials/Testimonials";
-import svgImages from "@/components/Constants/svgImages";
+import { Hero } from "./Hero/Hero";
+import { Problem } from "./Problem/Problem";
+import { Services } from "./Services/Services";
+import { Results } from "./Results/Results";
+import { Process } from "./Process/Process";
+import { Integrations } from "./Integrations/Integrations";
+import { Examples } from "./Examples/Examples";
+import { ElevateCTA } from "@/components/Common/CTA/ElevateCTA";
+import { CaseStudies } from "./CaseStudy/CaseStudies";
+import { FAQ } from "@/components/Common/FAQ/FAQ";
+
 
 const HomePage = () => {
   return (
-    <div className="relative flex flex-col gap-10">
-      <motion.div
-        className="absolute inset-0 top-0 left-0"
-        initial={{ opacity: 0, }}
-        animate={{ opacity: 1, }}
-        transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-        viewport={{ once: true }}
-      >
-        <svgImages.starBgImage />
-      </motion.div>
+    <div className="relative flex flex-col gap-10 selection:bg-[#1c2bff]/50">
       <Hero />
-      <TrustSection />
-      <ServicesSection />
-      <ValueProposition />
+      <Problem />
+      <Services />
+      <Results />
       <Process />
-      <ICPSection />
-      <ProjectsSection />
-      <Testimonials />
-      <Faq />
+      <Integrations />
+      <Examples />
+      <ElevateCTA />
+      <CaseStudies />
+      <FAQ />
     </div>
   );
 };
